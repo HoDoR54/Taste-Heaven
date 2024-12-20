@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-white">
+  <body class="bg-white bg-primary">
     <!-- hero section -->
     <section
       class="relative h-screen bg-[url(../images/home/hero-bg.jpg)] bg-cover flex flex-col"
@@ -32,16 +32,19 @@
             <a href="index.html"><i class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"></i>HeAVEn</a>
           </span>
         </div>
-        <div class="items-center justify-end flex-1 hidden md:flex">
+        <nav class="items-center justify-end flex-1 hidden md:flex">
           <ul
-            class="flex justify-around w-full text-xl text-center text-primary"
+            class="flex justify-around w-full text-lg text-center text-primary"
           >
-            <li class="cursor-pointer hover:text-accent"><a href="#">Menu</a></li>
-            <li class="cursor-pointer hover:text-accent"><a href="#">About Us</a></li>
-            <li class="cursor-pointer hover:text-accent"><a href="#">Our Services</a></li>
-            <li class="cursor-pointer hover:text-accent"><a href="#">Career</a></li>
-            <li class="cursor-pointer hover:text-accent"><a href="#">Contact</a></li>
+            <li class="cursor-pointer hover:text-accent"><a href="./menu.html">Menu</a></li>
+            <li class="cursor-pointer hover:text-accent"><a href="./about.html">About Us</a></li>
+            <li class="cursor-pointer hover:text-accent"><a href="./services.html">Our Services</a></li>
+            <li class="cursor-pointer hover:text-accent"><a href="./career.html">Career</a></li>
           </ul>
+        </nav>
+        <div class="flex items-center justify-end flex-1 text-lg gap-x-[1rem]">
+          <span class="text-primary"><i class="fa-solid fa-phone"></i>+959890079614</span>
+          <button class="p-3 text-lg rounded bg-primary hover:bg-accent text-dark"><a href="./booking.html">Book a table <i class="bi bi-arrow-bar-right"></i></a></button>
         </div>
       </header>
 
@@ -52,10 +55,12 @@
        <div class="relative z-40 flex flex-col items-start justify-start text-secondary mt-[10vh] ml-[10vw] w-max">
         <h1 class="text-[5rem] font-handWritten text-center font-extrabold">"THE BEST <br>IN <br>TOWN"</h1>
         <div class="flex justify-end w-full">
-          <button class="p-3 border-dotted border-[1px] border-primary hover:border-accent text-primary hover:text-accent">Explore Our Menu <i class="bi bi-arrow-bar-right"></i></button>
+          <button class="p-3 border-dotted border-[1px] border-primary hover:border-accent text-primary hover:text-accent text-lg"><a href="./menu.html">Explore Our Menu <i class="bi bi-arrow-bar-right"></i></a></button>
         </div>
        </div>
     </section>
-    <section class="min-h-screen bg-primary"></section>
+    <section class="flex">
+
+    </section>
   </body>
 </html>
