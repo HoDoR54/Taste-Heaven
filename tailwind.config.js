@@ -3,14 +3,14 @@ module.exports = {
   content: ["./src/html/index.html"],
   theme: {
     colors: {
-      primary: "#551938",
-      accent: "#F9A826",
-      light: "#EFF1D3",
+      accent: "#0BAE3A",
+      secondary: "#F9A826",
+      primary: "#EFF1D3",
       dark: "#171717",
     },
     extend: {
       fontFamily: {
-        nerko: ["Nerko One", "serif"],
+        handWritten: ["Handlee", "serif"],
       },
     },
   },
