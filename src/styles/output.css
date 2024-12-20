@@ -582,6 +582,10 @@ video {
   z-index: 40;
 }
 
+.me-1 {
+  margin-inline-end: 0.25rem;
+}
+
 .ml-\[10vw\] {
   margin-left: 10vw;
 }
@@ -594,12 +598,12 @@ video {
   margin-top: 10vh;
 }
 
-.me-2 {
-  margin-inline-end: 0.5rem;
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
-.me-1 {
-  margin-inline-end: 0.25rem;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .flex {
@@ -618,6 +622,19 @@ video {
   height: 100vh;
 }
 
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.w-\[9rem\] {
+  width: 9rem;
+}
+
 .w-full {
   width: 100%;
 }
@@ -625,10 +642,6 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[9rem\] {
-  width: 9rem;
 }
 
 .flex-1 {
@@ -684,6 +697,18 @@ video {
   border-width: 1px;
 }
 
+.border-\[3px\] {
+  border-width: 3px;
+}
+
+.border-\[2px\] {
+  border-width: 2px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
 .border-dotted {
   border-style: dotted;
 }
@@ -691,6 +716,11 @@ video {
 .border-primary {
   --tw-border-opacity: 1;
   border-color: rgb(239 241 211 / var(--tw-border-opacity, 1));
+}
+
+.border-accent {
+  --tw-border-opacity: 1;
+  border-color: rgb(106 193 92 / var(--tw-border-opacity, 1));
 }
 
 .bg-primary {
@@ -701,6 +731,11 @@ video {
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(249 168 38 / var(--tw-bg-opacity, 1));
+}
+
+.bg-accent {
+  --tw-bg-opacity: 1;
+  background-color: rgb(106 193 92 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[url\(\.\.\/images\/home\/hero-bg\.jpg\)\] {
@@ -729,6 +764,10 @@ video {
   padding: 0.75rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -739,12 +778,32 @@ video {
   padding-bottom: 1rem;
 }
 
+.py-\[20px\] {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.py-\[30px\] {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.py-\[50px\] {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .text-center {
   text-align: center;
 }
 
 .font-handWritten {
   font-family: Handlee, serif;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-4xl {
@@ -756,21 +815,30 @@ video {
   font-size: 5rem;
 }
 
+.text-\[8rem\] {
+  font-size: 8rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.text-\[2rem\] {
-  font-size: 2rem;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
-.text-\[8rem\] {
-  font-size: 8rem;
+.text-\[6rem\] {
+  font-size: 6rem;
 }
 
 .font-extrabold {
   font-weight: 800;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-dark {
@@ -788,6 +856,11 @@ video {
   color: rgb(249 168 38 / var(--tw-text-opacity, 1));
 }
 
+.text-accent {
+  --tw-text-opacity: 1;
+  color: rgb(106 193 92 / var(--tw-text-opacity, 1));
+}
+
 .hover\:border-accent:hover {
   --tw-border-opacity: 1;
   border-color: rgb(106 193 92 / var(--tw-border-opacity, 1));
@@ -801,6 +874,16 @@ video {
 .hover\:text-accent:hover {
   --tw-text-opacity: 1;
   color: rgb(106 193 92 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-dark:hover {
+  --tw-text-opacity: 1;
+  color: rgb(23 23 23 / var(--tw-text-opacity, 1));
+}
+
+.hover\:brightness-75:hover {
+  --tw-brightness: brightness(.75);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 768px) {
