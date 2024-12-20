@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taste Heaven</title>
     <link rel="stylesheet" href="../styles/output.css" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font -->
   </head>
-  <body></body>
+  <body class="bg-white">
+    <!-- hero section -->
+    <section
+      class="relative min-h-screen bg-[url(../images/hero-bg.jpg)] bg-cover"
+    >
+      <!-- logo and navigation -->
+      <header
+        class="sticky flex justify-between w-full p-3"
+      >
+        <div class="flex items-center flex-1">
+          <span class="text-5xl text-center font-nerko text-accent">
+            HEAVEN
+          </span>
+        </div>
+        <div class="flex items-center justify-end flex-1">
+          <ul
+            class="flex justify-around w-full text-xl font-bold text-center text-accent"
+          >
+            <li class="cursor-pointer"><a href="#">Menu</a></li>
+            <li class="cursor-pointer"><a href="#">About Us</a></li>
+            <li class="cursor-pointer"><a href="#">Our Services</a></li>
+            <li class="cursor-pointer"><a href="#">Career</a></li>
+            <li class="cursor-pointer"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- wave and overlay -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        class="absolute bottom-0 z-30"
+      >
+        <path
+          fill="#551938"
+          fill-opacity="1"
+          d="M0,192L30,186.7C60,181,120,171,180,181.3C240,192,300,224,360,234.7C420,245,480,235,540,240C600,245,660,267,720,277.3C780,288,840,288,900,256C960,224,1020,160,1080,122.7C1140,85,1200,75,1260,64C1320,53,1380,43,1410,37.3L1440,32L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+        ></path>
+      </svg>
+      <div
+        class="overlay absolute top-0 left-0 right-0 bottom-0 bg-[#000] opacity-20 z-20"
+      ></div>
+    </section>
+    <section class="min-h-screen bg-primary"></section>
+  </body>
 </html>
