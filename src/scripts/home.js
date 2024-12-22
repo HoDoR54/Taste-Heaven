@@ -1,5 +1,4 @@
 import { serviceCards } from "./data/html.js";
-import { menuItems } from "./data/menuItems.js";
 
 // render service cards
 
@@ -17,7 +16,7 @@ serviceCards.forEach((card) => {
             <p class="text-dark-700">${card.content}</p>
         </div>
         <div class="h-40">
-            <button class="mt-5 p-2 text-lg border-2 border-[2px] border-dotted border-accent text-accent rounded hover:bg-accent hover:text-dark transition">
+            <button class="mt-5 p-2 text-lg border-2 border-dotted border-accent text-accent rounded hover:bg-accent hover:text-dark transition">
                 ${card.btnContent} <i class="bi bi-arrow-bar-right"></i>
             </button>
         </div>
