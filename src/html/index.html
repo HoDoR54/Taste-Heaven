@@ -27,6 +27,7 @@
     />
 
     <!-- script -->
+    <script defer src="../scripts/animation.js"></script>
     <script defer type="module" src="../scripts/home.js"></script>
   </head>
   <body class="bg-white bg-primary">
@@ -108,22 +109,15 @@
       class="flex items-center justify-around px-6 py-[50px] h-max"
     ></section>
 
-    <section class="flex px-6 py-[50px] h-max flex-col">
-      <h1 class="mb-2 text-2xl">Today's Special</h1>
-      <div id="js-home-todays-special" class="flex h-screen gap-4">
-        <div class="flex-1 bg-dark"></div>
-        <div class="flex-1 bg-dark"></div>
-        <div class="flex-1 bg-dark"></div>
-        <div class="flex-1 bg-dark"></div>
-        <div class="flex-1 bg-dark"></div>
-      </div>
-      <!-- <div class="w-[100%] !h-[60px] grid grid-cols-10">
-        <div class="col-span-2 h-[40px] bg-red-500"></div>
-        <div class="col-span-2 h-[40px] bg-red-500"></div>
-        <div class="col-span-2 h-[40px] bg-red-500"></div>
-        <div class="col-span-2 h-[40px] bg-red-500"></div>
-        <div class="col-span-2 h-[40px] bg-red-500"></div>
-      </div> -->
+    <!-- today's special -->
+    <section class="flex px-6 py-[50px] flex-col overflow-hidden">
+      <h1 class="mb-[1.5rem] text-2xl font-bold">Today's Special</h1>
+      <div
+        id="js-home-todays-special"
+        class="flex w-full gap-4 overflow-scroll scroll-smooth no-scrollbar"
+      ></div>
     </section>
+
+    <section class="min-h-screen bg-primary"></section>
   </body>
 </html>
