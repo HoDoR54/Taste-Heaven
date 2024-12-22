@@ -25,19 +25,3 @@ serviceCards.forEach((card) => {
 });
 
 homeServiceSection.innerHTML = cardHTML;
-
-// render menu on home page
-
-// const menuDiv = document.getElementById("js-home-todays-special");
-// let homeMenuHtml;
-
-// menuItems.forEach((item) => {
-//   homeMenuHtml = `
-//         <div>
-//             <img src="../images/menu/${item.dishPic}"
-//             <p>${item.dishName}</p>
-//         </div>
-//     `;
-// });
-
-// menuDiv.innerHTML += homeMenuHtml;
