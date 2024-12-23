@@ -44,10 +44,9 @@ menuItems.forEach((dish) => {
             <div class="p-3 flex flex-col">
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
                 <p class="text-sm opacity-80">${dish.price}</p>
-                <div class="flex justify-end mt-auto"> <!-- Removed flex-1 and align-bottom -->
+                <div class="flex justify-end mt-auto">
                 <button
-                    class="p-2 hover:border-dotted hover:border-[2px] rounded bg-accent text-dark hover:border-dark hover:bg-primary hover:text-dark"
-                >
+                    class="p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]">
                     Order Now
                 </button>
                 </div>

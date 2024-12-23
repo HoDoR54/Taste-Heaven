@@ -111,13 +111,18 @@
 
     <!-- today's special -->
     <section class="flex px-6 py-[50px] flex-col overflow-hidden">
-      <h1 class="mb-[1.5rem] text-2xl font-bold">Today's Special</h1>
+      <h1 class="mb-[1.5rem]">
+        <span class="mr-3 text-2xl font-bold">Today's Special</span>
+        <span class="mr-3 cursor-pointer text-accent hover:underline"
+          >See all<i class="bi bi-arrow-bar-right"></i
+        ></span>
+      </h1>
       <div
         id="js-home-todays-special"
         class="flex w-full gap-4 overflow-scroll scroll-smooth no-scrollbar"
       ></div>
     </section>
 
-    <section class="min-h-screen bg-primary"></section>
+    <section class="min-h-screen bg-secondary"></section>
   </body>
 </html>
