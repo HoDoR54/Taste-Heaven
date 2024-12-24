@@ -5,6 +5,7 @@ export const menuItems = Object.freeze([
     dishName: "Charcoal-Crusted Steak",
     price: "$19.99",
     alt: "Charcoal-Crusted Steak served with vegetables",
+    isPopular: false,
   },
   {
     dishId: 2,
@@ -12,6 +13,7 @@ export const menuItems = Object.freeze([
     dishName: "Lobster Thermidor",
     price: "$38.99",
     alt: "Lobster Thermidor in a creamy sauce",
+    isPopular: false,
   },
   {
     dishId: 3,
@@ -19,6 +21,7 @@ export const menuItems = Object.freeze([
     dishName: "Duck à l'Orange",
     price: "$24.99",
     alt: "Duck à l'Orange with crispy skin and orange sauce",
+    isPopular: false,
   },
   {
     dishId: 4,
@@ -26,6 +29,7 @@ export const menuItems = Object.freeze([
     dishName: "Truffle Risotto",
     price: "$21.99",
     alt: "Creamy Truffle Risotto with parmesan",
+    isPopular: true,
   },
   {
     dishId: 5,
@@ -33,6 +37,7 @@ export const menuItems = Object.freeze([
     dishName: "Beef Wellington",
     price: "$45.99",
     alt: "Beef Wellington with mushroom duxelles and puff pastry",
+    isPopular: true,
   },
   {
     dishId: 6,
@@ -40,6 +45,7 @@ export const menuItems = Object.freeze([
     dishName: "Pan-Seared Scallops",
     price: "$28.99",
     alt: "Pan-Seared Scallops with a light lemon butter sauce",
+    isPopular: true,
   },
   {
     dishId: 7,
@@ -47,6 +53,7 @@ export const menuItems = Object.freeze([
     dishName: "Grilled Lamb Chops",
     price: "$33.99",
     alt: "Grilled Lamb Chops with rosemary and garlic",
+    isPopular: false,
   },
   {
     dishId: 8,
@@ -54,6 +61,7 @@ export const menuItems = Object.freeze([
     dishName: "Sous-Vide Salmon",
     price: "$22.99",
     alt: "Sous-Vide Salmon with a delicate texture and flavor",
+    isPopular: true,
   },
   {
     dishId: 9,
@@ -61,6 +69,7 @@ export const menuItems = Object.freeze([
     dishName: "Wagyu Beef Tartare",
     price: "$49.99",
     alt: "Wagyu Beef Tartare with egg yolk and capers",
+    isPopular: false,
   },
   {
     dishId: 10,
@@ -68,6 +77,7 @@ export const menuItems = Object.freeze([
     dishName: "Seafood Paella",
     price: "$34.99",
     alt: "Seafood Paella with shrimp, mussels, and saffron",
+    isPopular: true,
   },
   {
     dishId: 11,
@@ -75,6 +85,7 @@ export const menuItems = Object.freeze([
     dishName: "Miso-Glazed Black Cod",
     price: "$27.99",
     alt: "Miso-Glazed Black Cod with a crispy finish",
+    isPopular: false,
   },
   {
     dishId: 12,
@@ -82,5 +93,6 @@ export const menuItems = Object.freeze([
     dishName: "Caviar with Blinis",
     price: "$56.99",
     alt: "Caviar served with mini blinis and crème fraîche",
+    isPopular: true,
   },
 ]);
