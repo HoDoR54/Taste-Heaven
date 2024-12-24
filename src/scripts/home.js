@@ -44,7 +44,7 @@ popularDishes.forEach((dish) => {
             </div>
             <div class="p-3 flex flex-col">
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
-                <p class="text-sm opacity-80">${dish.price}</p>
+                <p class="text-sm opacity-80">$${dish.price}</p>
                 <div class="flex justify-end mt-auto">
                 <button
                     class="p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]">
@@ -82,7 +82,7 @@ todaysSpecial.forEach((dish) => {
             </div>
             <div class="p-3 flex flex-col">
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
-                <p class="text-sm opacity-80">${dish.price}</p>
+                <p class="text-sm opacity-80">$${dish.price}</p>
                 <div class="flex justify-end mt-auto">
                 <button
                     class="p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]">
