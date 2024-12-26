@@ -1,5 +1,6 @@
 import { serviceCards } from "./data/html.js";
 import { menuItems } from "./data/menuItems.js";
+import { orderedDishes } from "./data/ordered.js";
 
 // render service cards
 
@@ -17,7 +18,7 @@ serviceCards.forEach((card) => {
             <p class="text-dark-700">${card.content}</p>
         </div>
         <div class="h-40">
-            <button class="mt-5 p-2 text-lg border-[2px] border-dotted border-accent text-accent rounded hover:bg-accent hover:text-dark transition">
+            <button class="js-order-now mt-5 p-2 text-lg border-[2px] border-dotted border-accent text-accent rounded hover:bg-accent hover:text-dark transition">
                 ${card.btnContent} <i class="bi bi-arrow-bar-right"></i>
             </button>
         </div>
@@ -34,7 +35,7 @@ let popularDishesHtml = "";
 
 popularDishes.forEach((dish) => {
   popularDishesHtml += `
-        <div class="overflow-hidden border-dotted border-dark border-[2px] rounded-xl min-w-[300px] relative">
+        <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl min-w-[300px] relative">
             <div
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
@@ -56,10 +57,13 @@ popularDishes.forEach((dish) => {
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
                 <p class="text-sm opacity-80">$${dish.price}</p>
                 <div class="flex justify-end mt-auto">
-                <button
-                    class="p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]">
-                    Order Now
-                </button>
+                    <a href="./order.html">
+                        <button
+                            class="js-order-now p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
+                            data-dish-id="${dish.dishId}">
+                            Order Now
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -82,7 +86,7 @@ const todaysSpecial = getTodaysSpecial(menuItems, 5);
 
 todaysSpecial.forEach((dish) => {
   todaysSpecialHtml += `
-        <div class="overflow-hidden border-dotted border-dark border-[2px] rounded-xl min-w-[300px] relative">
+        <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl min-w-[300px] relative">
             <div
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
@@ -104,10 +108,13 @@ todaysSpecial.forEach((dish) => {
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
                 <p class="text-sm opacity-80">$${dish.price}</p>
                 <div class="flex justify-end mt-auto">
-                <button
-                    class="p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]">
-                    Order Now
-                </button>
+                    <a href="./order.html">
+                        <button
+                            class="js-order-now p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
+                            data-dish-id="${dish.dishId}">
+                            Order Now
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -115,3 +122,20 @@ todaysSpecial.forEach((dish) => {
 });
 
 todaysSpecialDisplay.innerHTML = todaysSpecialHtml;
+
+// making order buttons interactive
+
+const orderBtns = document.querySelectorAll(".js-order-now");
+
+orderBtns.forEach((orderBtn) => {
+  orderBtn.addEventListener("click", () => {
+    const clickedDishId = orderBtn.getAttribute("data-dish-id");
+    const selectedDish = menuItems.find(
+      (dish) => dish.dishId === clickedDishId
+    );
+
+    orderedDishes.push(selectedDish);
+
+    localStorage.setItem("orderedDishes", JSON.stringify(orderedDishes));
+  });
+});

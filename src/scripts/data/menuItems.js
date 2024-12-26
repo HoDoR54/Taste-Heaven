@@ -1,6 +1,6 @@
-export const menuItems = Object.freeze([
+export const menuItems = [
   {
-    dishId: 1,
+    dishId: "1",
     dishPic: "1.jpg",
     dishName: "Charcoal-Crusted Steak",
     price: "19.99",
@@ -8,7 +8,7 @@ export const menuItems = Object.freeze([
     isPopular: false,
   },
   {
-    dishId: 2,
+    dishId: "2",
     dishPic: "2.webp",
     dishName: "Lobster Thermidor",
     price: "38.99",
@@ -16,7 +16,7 @@ export const menuItems = Object.freeze([
     isPopular: false,
   },
   {
-    dishId: 3,
+    dishId: "3",
     dishPic: "3.webp",
     dishName: "Duck à l'Orange",
     price: "24.99",
@@ -24,7 +24,7 @@ export const menuItems = Object.freeze([
     isPopular: false,
   },
   {
-    dishId: 4,
+    dishId: "4",
     dishPic: "4.jpg",
     dishName: "Truffle Risotto",
     price: "21.99",
@@ -32,7 +32,7 @@ export const menuItems = Object.freeze([
     isPopular: true,
   },
   {
-    dishId: 5,
+    dishId: "5",
     dishPic: "5.webp",
     dishName: "Beef Wellington",
     price: "45.99",
@@ -40,7 +40,7 @@ export const menuItems = Object.freeze([
     isPopular: true,
   },
   {
-    dishId: 6,
+    dishId: "6",
     dishPic: "6.webp",
     dishName: "Pan-Seared Scallops",
     price: "28.99",
@@ -48,7 +48,7 @@ export const menuItems = Object.freeze([
     isPopular: true,
   },
   {
-    dishId: 7,
+    dishId: "7",
     dishPic: "7.jpg",
     dishName: "Grilled Lamb Chops",
     price: "33.99",
@@ -56,7 +56,7 @@ export const menuItems = Object.freeze([
     isPopular: false,
   },
   {
-    dishId: 8,
+    dishId: "8",
     dishPic: "8.webp",
     dishName: "Sous-Vide Salmon",
     price: "22.99",
@@ -64,7 +64,7 @@ export const menuItems = Object.freeze([
     isPopular: true,
   },
   {
-    dishId: 9,
+    dishId: "9",
     dishPic: "9.jpg",
     dishName: "Wagyu Beef Tartare",
     price: "49.99",
@@ -72,7 +72,7 @@ export const menuItems = Object.freeze([
     isPopular: false,
   },
   {
-    dishId: 10,
+    dishId: "10",
     dishPic: "10.jpg",
     dishName: "Seafood Paella",
     price: "34.99",
@@ -80,7 +80,7 @@ export const menuItems = Object.freeze([
     isPopular: true,
   },
   {
-    dishId: 11,
+    dishId: "11",
     dishPic: "11.webp",
     dishName: "Miso-Glazed Black Cod",
     price: "27.99",
@@ -88,11 +88,11 @@ export const menuItems = Object.freeze([
     isPopular: false,
   },
   {
-    dishId: 12,
+    dishId: "12",
     dishPic: "12.webp",
     dishName: "Caviar with Blinis",
     price: "56.99",
     alt: "Caviar served with mini blinis and crème fraîche",
     isPopular: true,
   },
-]);
+];
