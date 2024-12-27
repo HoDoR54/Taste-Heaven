@@ -28,7 +28,8 @@
 
     <!-- script -->
     <script defer type="module" src="../scripts/home.js"></script>
-    <script defer src="../scripts/animation.js"></script>
+    <script defer src="../scripts/UX/scroll.js"></script>
+    <script defer src="../scripts/UX/add-to-fav.js"></script>
   </head>
   <body class="bg-white bg-primary">
     <!-- hero section -->
@@ -38,18 +39,18 @@
       <!-- logo and navigation -->
       <header class="relative z-40 flex justify-between w-full px-6 py-4">
         <div class="flex items-center flex-1">
-          <span class="text-4xl text-center cursor-pointer text-primary">
+          <span class="text-2xl text-center cursor-pointer text-primary">
             <a href="index.html"
               ><i
                 class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
               ></i
-              >HeAVEn</a
+              ><span class="font-semibold">HeAVEn</span></a
             >
           </span>
         </div>
         <nav class="flex items-center justify-end flex-1">
           <ul
-            class="flex justify-around w-full text-lg text-center text-primary"
+            class="flex justify-around w-full text-center text-md text-primary"
           >
             <li class="cursor-pointer hover:text-accent">
               <a href="./menu.html">Menu</a>
@@ -65,12 +66,12 @@
             </li>
           </ul>
         </nav>
-        <div class="flex items-center justify-end flex-1 text-lg gap-x-[1rem]">
+        <div class="flex items-center justify-end flex-1 text-md gap-x-[1rem]">
           <span class="text-primary"
             ><i class="fa-solid fa-phone me-1"></i>+959890079614</span
           >
           <button
-            class="p-2 text-lg rounded bg-primary hover:bg-accent text-dark"
+            class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
           >
             <a href="./booking.html"
               >Book a table <i class="bi bi-arrow-bar-right"></i
@@ -106,7 +107,7 @@
     <!-- service cards -->
     <section
       id="js-home-services-sec"
-      class="flex items-center justify-around px-6 py-[50px] h-max"
+      class="flex items-center justify-around px-6 py-[50px] h-max pb-0"
     ></section>
 
     <!-- today's special -->

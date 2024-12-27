@@ -1,6 +1,6 @@
 import { serviceCards } from "./data/html.js";
 import { menuItems } from "./data/menuItems.js";
-import { orderedDishes } from "./data/ordered.js";
+import { formatCurrency } from "./utils/money.js";
 
 // render service cards
 
@@ -55,13 +55,13 @@ popularDishes.forEach((dish) => {
             </div>
             <div class="p-3 flex flex-col">
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
-                <p class="text-sm opacity-80">$${dish.price}</p>
+                <p class="text-sm opacity-80">$${formatCurrency(dish.price)}</p>
                 <div class="flex justify-end mt-auto">
-                    <a href="./order.html">
+                    <a href="./dish-details.html">
                         <button
-                            class="js-order-now p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
+                            class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
                             data-dish-id="${dish.dishId}">
-                            Order Now
+                            View
                         </button>
                     </a>
                 </div>
@@ -106,13 +106,13 @@ todaysSpecial.forEach((dish) => {
             </div>
             <div class="p-3 flex flex-col">
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
-                <p class="text-sm opacity-80">$${dish.price}</p>
+                <p class="text-sm opacity-80">$${formatCurrency(dish.price)}</p>
                 <div class="flex justify-end mt-auto">
-                    <a href="./order.html">
+                    <a href="./dish-details.html">
                         <button
-                            class="js-order-now p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
+                            class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
                             data-dish-id="${dish.dishId}">
-                            Order Now
+                            View
                         </button>
                     </a>
                 </div>
@@ -122,20 +122,3 @@ todaysSpecial.forEach((dish) => {
 });
 
 todaysSpecialDisplay.innerHTML = todaysSpecialHtml;
-
-// making order buttons interactive
-
-const orderBtns = document.querySelectorAll(".js-order-now");
-
-orderBtns.forEach((orderBtn) => {
-  orderBtn.addEventListener("click", () => {
-    const clickedDishId = orderBtn.getAttribute("data-dish-id");
-    const selectedDish = menuItems.find(
-      (dish) => dish.dishId === clickedDishId
-    );
-
-    orderedDishes.push(selectedDish);
-
-    localStorage.setItem("orderedDishes", JSON.stringify(orderedDishes));
-  });
-});

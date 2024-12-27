@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dish Details</title>
+    <link rel="stylesheet" href="../styles/output.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- bootstrap icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- script -->
+    <script defer type="module" src="../scripts/dish-details.js"></script>
+    <script defer src="../scripts/UX/add-to-fav.js"></script>
+  </head>
+  <body class="bg-primary">
+    <header
+      class="relative z-40 flex justify-between w-full px-6 py-4 shadow-lg"
+    >
+      <div class="flex items-center flex-1">
+        <span class="text-2xl text-center cursor-pointer text-dark">
+          <a href="index.html"
+            ><i
+              class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
+            ></i
+            ><span class="font-semibold">HeAVEn</span></a
+          >
+        </span>
+      </div>
+      <nav class="flex items-center justify-end flex-1">
+        <ul class="flex justify-around w-full text-center text-md text-dark">
+          <li class="cursor-pointer hover:text-accent">
+            <a href="./menu.html">Menu</a>
+          </li>
+          <li class="cursor-pointer hover:text-accent">
+            <a href="./about.html">About Us</a>
+          </li>
+          <li class="cursor-pointer hover:text-accent">
+            <a href="./services.html">Our Services</a>
+          </li>
+          <li class="cursor-pointer hover:text-accent">
+            <a href="./career.html">Career</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="flex items-center justify-end flex-1 text-md gap-x-[1rem]">
+        <span class="text-dark"
+          ><i class="fa-solid fa-phone me-1"></i>+959890079614</span
+        >
+        <button
+          class="p-2 rounded text-md bg-secondary hover:bg-accent text-dark"
+        >
+          <a href="./booking.html"
+            >Book a table <i class="bi bi-arrow-bar-right"></i
+          ></a>
+        </button>
+      </div>
+    </header>
+
+    <!-- main section of the page -->
+    <main class="p-5">
+      <!-- back to menu -->
+      <a href="menu.html">
+        <h1 class="cursor-pointer text-accent hover:underline">
+          <i class="bi bi-arrow-bar-left"></i>Back to Menu
+        </h1>
+      </a>
+    </main>
+  </body>
+</html>

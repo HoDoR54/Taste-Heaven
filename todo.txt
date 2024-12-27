@@ -2,7 +2,9 @@ add testimonial section on home page --- [done]
 
 add an upcoming events section on home page --- [done]
 
-make order buttons on home page interactive 
+make order buttons on home page interactive -- [done]
+
+design dish detail page (a sub-page of the menu)
 
 add a suggestion list on order page
 
