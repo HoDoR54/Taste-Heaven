@@ -1,6 +1,7 @@
 import { serviceCards } from "./data/html.js";
 import { menuItems } from "./data/menuItems.js";
 import { formatCurrency } from "./utils/money.js";
+import { setViewingDish } from "./data/dish-view.js";
 
 // render service cards
 
@@ -122,3 +123,17 @@ todaysSpecial.forEach((dish) => {
 });
 
 todaysSpecialDisplay.innerHTML = todaysSpecialHtml;
+
+// get the dish user wants to view and return
+
+const viewBtns = document.querySelectorAll(".js-dish-view");
+
+viewBtns.forEach((viewBtn) => {
+  viewBtn.addEventListener("click", () => {
+    const clickedDishId = viewBtn.getAttribute("data-dish-id");
+    const selectedDish = menuItems.find(
+      (dish) => dish.dishId === clickedDishId
+    );
+    setViewingDish(selectedDish);
+  });
+});
