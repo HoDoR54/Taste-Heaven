@@ -28,10 +28,10 @@ serviceCards.forEach((card) => {
 
 homeServiceSection.innerHTML = cardHTML;
 
-// rendering popular dishes
+// render popular dishes
 
 const popularDishesDisplay = document.getElementById("js-home-popular-dishes");
-const popularDishes = menuItems.filter((dish) => dish.isPopular);
+const popularDishes = menuItems.filter((dish) => dish.rating >= 4.5);
 let popularDishesHtml = "";
 
 popularDishes.forEach((dish) => {
@@ -41,10 +41,10 @@ popularDishes.forEach((dish) => {
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
                 <i
-                    class="text-lg cursor-pointer add-to-favorite fa-regular fa-heart"
+                    class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart"
                 ></i>
                 <i
-                    class="hidden text-lg cursor-pointer added-to-favorite fa-solid fa-heart"
+                    class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart"
                 ></i>
             </div>
             <div>
@@ -92,10 +92,10 @@ todaysSpecial.forEach((dish) => {
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
                 <i
-                    class="text-lg cursor-pointer add-to-favorite fa-regular fa-heart"
+                    class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart"
                 ></i>
                 <i
-                    class="hidden text-lg cursor-pointer added-to-favorite fa-solid fa-heart"
+                    class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart"
                 ></i>
             </div>
             <div>

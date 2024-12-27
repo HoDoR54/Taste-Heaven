@@ -1,5 +1,5 @@
-const addToFavoriteIcons = document.querySelectorAll(".add-to-favorite");
-const addedToFavoriteIcons = document.querySelectorAll(".added-to-favorite");
+const addToFavoriteIcons = document.querySelectorAll(".add-to-favorites");
+const addedToFavoriteIcons = document.querySelectorAll(".added-to-favorites");
 
 addToFavoriteIcons.forEach((addToFavorite, idx) => {
   addToFavorite.addEventListener("click", () => {

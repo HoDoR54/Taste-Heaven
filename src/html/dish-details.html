@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dish Details</title>
     <link rel="stylesheet" href="../styles/output.css" />
+    <link rel="icon" href="../images/general/title icon.png" type="image/png" />
     <!-- font-awesome -->
     <link
       rel="stylesheet"
@@ -29,7 +30,7 @@
     <script defer type="module" src="../scripts/dish-details.js"></script>
     <script defer src="../scripts/UX/add-to-fav.js"></script>
   </head>
-  <body class="bg-primary">
+  <body class="bg-primary text-dark">
     <header
       class="relative z-40 flex justify-between w-full px-6 py-4 shadow-lg"
     >
@@ -74,13 +75,17 @@
     </header>
 
     <!-- main section of the page -->
-    <main class="p-5">
+    <main class="px-12 py-5">
       <!-- back to menu -->
-      <a href="menu.html">
-        <h1 class="cursor-pointer text-accent hover:underline">
+      <div>
+        <a href="menu.html" class="cursor-pointer text-accent hover:underline">
           <i class="bi bi-arrow-bar-left"></i>Back to Menu
-        </h1>
-      </a>
+        </a>
+      </div>
+      <section
+        id="js-viewing-dish"
+        class="w-full min-h-[20vh] py-8 grid grid-cols-5 items-center justify-center"
+      ></section>
     </main>
   </body>
 </html>
