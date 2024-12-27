@@ -19,7 +19,7 @@ let dishDetialHtml = `
           <img
             src="../images/menu/${viewingDish.dishPic}"
             alt="${viewingDish.alt}"
-            class="w-[250px] h-[250px] rounded-lg"
+            class="w-[250px] h-[250px] rounded-lg object-cover"
           />
         </div>
         <div class="ml-[1rem] col-span-3">
@@ -42,13 +42,13 @@ let dishDetialHtml = `
         </div>
         <div class="flex items-start justify-end min-h-full">
           <button
-            class="add-to-favorites p-2 text-xl border-dotted rounded h-max border-dark border-[2px]"
+            class="add-to-favorites p-2 text-lg border-dotted rounded h-max border-dark border-[2px]"
           >
             <i class="fa-regular fa-heart add-to-favorite"></i>
             Add to favorites
           </button>
           <button
-            class="hidden p-2 text-xl rounded added-to-favorites h-max bg-accent text-primary"
+            class="hidden p-2 text-lg rounded added-to-favorites h-max bg-dark text-primary"
           >
             <i class="fa-solid fa-heart"></i>
             Added to favorites
