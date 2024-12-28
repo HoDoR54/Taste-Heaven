@@ -1,5 +1,6 @@
 import { getViewingDish } from "./data/dish-view.js";
 
+// render dish details based on which one is clicked
 const viewingDish = getViewingDish();
 document.title = viewingDish.dishName + " - Dish Details";
 
@@ -42,13 +43,13 @@ let dishDetialHtml = `
         </div>
         <div class="flex items-start justify-end min-h-full">
           <button
-            class="add-to-favorites p-2 text-lg border-dotted rounded h-max border-dark border-[2px]"
+            class="add-to-favorites p-2 text-lg border-dotted rounded h-max border-accent text-accent border-[2px]"
           >
             <i class="fa-regular fa-heart add-to-favorite"></i>
             Add to favorites
           </button>
           <button
-            class="hidden p-2 text-lg rounded added-to-favorites h-max bg-dark text-primary"
+            class="hidden p-2 text-lg rounded added-to-favorites h-max bg-accent text-primary"
           >
             <i class="fa-solid fa-heart"></i>
             Added to favorites
@@ -57,3 +58,22 @@ let dishDetialHtml = `
 `;
 
 dishDetailsContianer.innerHTML = dishDetialHtml;
+
+// filter suggestions on dish details page
+
+const filterOne = document.getElementsByClassName("js-filter-1")[0];
+const filterTwo = document.getElementsByClassName("js-filter-2")[0];
+const filterThree = document.getElementsByClassName("js-filter-3")[0];
+
+const suggestionDiv = document.getElementById("js-suggestion-list");
+
+filterOne.addEventListener("click", () => {
+  suggestionDiv.textContent = "Frequent Matches";
+});
+
+filterTwo.addEventListener("click", () => {
+  suggestionDiv.textContent = "Similar Dishes";
+});
+filterThree.addEventListener("click", () => {
+  suggestionDiv.textContent = "Others";
+});

@@ -4,9 +4,9 @@ add an upcoming events section on home page --- [done]
 
 make order buttons on home page interactive -- [done]
 
-design dish detail page (a sub-page of the menu)
+design dish detail page (a sub-page of the menu) -- [done]
 
-add a suggestion list on order page
+add a suggestion list on dish detail page
 
 design a form page for booking a table
 
@@ -14,7 +14,7 @@ design a menu page with stage changes for different categories (and filtering)
 
 today's special auto refresh feature
 
-add more items in the menu and categorise them
+add more items in the menu and categorise them -- [done]
 
 take customer feedback from a form (a little bit of backend included)
 

@@ -63,7 +63,7 @@
           ><i class="fa-solid fa-phone me-1"></i>+959890079614</span
         >
         <button
-          class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
+          class="p-2 rounded text-md bg-accent hover:bg-primary text-dark"
         >
           <a href="./booking.html"
             >Book a table <i class="bi bi-arrow-bar-right"></i
@@ -73,7 +73,7 @@
     </header>
 
     <!-- main section of the page -->
-    <main class="px-12 py-5 border-b-[2px] border-dotted border-dark">
+    <main class="px-12 py-5 border-b-[2px] border-dotted border-accent">
       <!-- back to menu -->
       <div>
         <a href="menu.html" class="cursor-pointer text-accent hover:underline">
@@ -87,20 +87,20 @@
     </main>
 
     <!-- suggestions -->
-    <div class="flex px-5 bg-accent">
+    <div class="flex px-5 border-b-[2px] border-dotted border-accent">
       <ul class="flex">
         <li
-          class="flex items-center justify-center p-3 cursor-pointer js-filter-1 bg-secondary"
+          class="flex items-center justify-center p-3 cursor-pointer js-filter-1 hover:bg-accent"
         >
           Frequent matches
         </li>
         <li
-          class="flex items-center justify-center p-3 cursor-pointer js-filter-2 bg-dark text-primary"
+          class="flex items-center justify-center p-3 cursor-pointer js-filter-2 hover:bg-accent"
         >
           Similar Dishes
         </li>
         <li
-          class="flex items-center justify-center p-3 cursor-pointer js-filter-3 bg-secondary"
+          class="flex items-center justify-center p-3 cursor-pointer js-filter-3 hover:bg-accent"
         >
           Others
         </li>
@@ -108,7 +108,10 @@
     </div>
 
     <!-- suggestions list -->
-    <section class="min-h-screen"></section>
+    <section
+      id="js-suggestion-list"
+      class="flex items-center justify-center min-h-[50vh] text-5xl font-bold font-handWritten"
+    ></section>
 
     <!-- footer -->
     <footer class="mt-[2.5rem]">
