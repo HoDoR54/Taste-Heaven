@@ -344,7 +344,7 @@ export const menuItems = [
   },
   {
     dishId: "55",
-    dishPic: "55.jpg",
+    dishPic: "55.webp",
     dishName: "Fried Calamari",
     price: 1099,
     alt: "Crispy Fried Calamari served with marinara sauce",

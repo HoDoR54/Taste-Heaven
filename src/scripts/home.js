@@ -54,7 +54,7 @@ popularDishes.forEach((dish) => {
                 class="w-[300px] h-[200px] object-cover"
                 />
             </div>
-            <div class="p-3 flex flex-col">
+            <div class="p-3 flex flex-col bg-primary">
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
                 <p class="text-sm opacity-80">$${formatCurrency(dish.price)}</p>
                 <div class="flex justify-end mt-auto">
@@ -105,7 +105,7 @@ todaysSpecial.forEach((dish) => {
                 class="w-[300px] h-[200px] object-cover"
                 />
             </div>
-            <div class="p-3 flex flex-col">
+            <div class="p-3 flex flex-col bg-primary">
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
                 <p class="text-sm opacity-80">$${formatCurrency(dish.price)}</p>
                 <div class="flex justify-end mt-auto">
