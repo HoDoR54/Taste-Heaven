@@ -1,4 +1,5 @@
 import { getViewingDish } from "./data/dish-view.js";
+import { formatCurrency } from "./utils/money.js";
 
 // render dish details based on which one is clicked
 const viewingDish = getViewingDish();
@@ -25,14 +26,22 @@ let dishDetialHtml = `
         </div>
         <div class="ml-[1rem] col-span-3">
           <h2 class="text-3xl font-bold">${viewingDish.dishName}</h2>
+          <p class="text-lg font-semibold">$${formatCurrency(
+            viewingDish.price
+          )}</p>
           <span
-            ><i class="mr-2 fa-solid fa-star text-secondary"></i>${viewingDish.rating}
+            ><i class="mr-2 fa-solid fa-star text-secondary"></i>${
+              viewingDish.rating
+            }
             <a href="#" class="opacity-50 hover:underline hover:opacity-80"
               >(200+ ratings)</a
-            ><span class="hidden ml-3 font-handWritten text-secondary"
-              >Popular</span
             ></span
           >
+          
+          <span id="js-popular-dish" class="hidden ml-3 font-handWritten text-secondary"
+              >Popular</span
+            >
+            
           <p class="max-w-[50vw] mt-3">
             ${viewingDish.origin}
           </p>
@@ -40,24 +49,37 @@ let dishDetialHtml = `
             <span class="font-medium text-accent">Main ingredients: </span>
             <span>${ingredients}</span>
           </p>
+          <div class="mt-3 flex gap-4">
+            
+            <button class="bg-secondary p-2 border-dotted border-[2px] text-dark border-dark rounded hover:bg-primary hover:border-accent hover:text-accent">
+            <i class="bi bi-coin"></i>
+              Order now
+            </button>
+          </div>
         </div>
-        <div class="flex items-start justify-end min-h-full">
+        <div class="flex justify-end min-h-full flex-col">
           <button
-            class="add-to-favorites p-2 text-lg border-dotted rounded h-max border-accent text-accent border-[2px]"
-          >
-            <i class="fa-regular fa-heart add-to-favorite"></i>
-            Add to favorites
-          </button>
-          <button
-            class="hidden p-2 text-lg rounded added-to-favorites h-max bg-accent text-primary"
-          >
-            <i class="fa-solid fa-heart"></i>
-            Added to favorites
-          </button>
+            class="add-to-favorites p-2 text-md border-dotted rounded h-max border-accent text-accent border-[2px]"
+            >
+              <i class="fa-regular fa-heart add-to-favorite"></i>
+              Add to favorites
+            </button>
+            <button
+              class="hidden p-2 text-md rounded added-to-favorites h-max bg-accent text-primary"
+            >
+              <i class="fa-solid fa-heart"></i>
+              Added to favorites
+            </button>
         </div>
 `;
 
 dishDetailsContianer.innerHTML = dishDetialHtml;
+
+const popularText = document.getElementById("js-popular-dish");
+
+if (viewingDish.rating >= 4.8) {
+  popularText.classList.remove("hidden");
+}
 
 // filter suggestions on dish details page
 

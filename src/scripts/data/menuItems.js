@@ -11,6 +11,7 @@ export const menuItems = [
       "The Charcoal-Crusted Steak is inspired by the rich traditions of American barbecue, a culinary art deeply rooted in the southern United States...",
     ingredient: ["Steak", "Charcoal seasoning", "Vegetables", "Butter"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "2",
@@ -23,6 +24,7 @@ export const menuItems = [
       "Lobster Thermidor is a quintessential French dish that epitomizes the country's love for rich, indulgent flavors...",
     ingredient: ["Lobster", "Cream", "Cheese", "White wine", "Mustard"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "3",
@@ -35,6 +37,7 @@ export const menuItems = [
       "Duck à l'Orange is a cornerstone of traditional French cuisine, with roots tracing back to the royal courts of the Renaissance...",
     ingredient: ["Duck", "Orange juice", "Sugar", "Butter", "Herbs"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "4",
@@ -47,6 +50,7 @@ export const menuItems = [
       "Truffle Risotto is a dish that showcases the rich culinary heritage of Italy, particularly the regions of Piedmont and Umbria...",
     ingredient: ["Rice", "Truffle", "Parmesan", "Butter", "Chicken stock"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "5",
@@ -59,6 +63,7 @@ export const menuItems = [
       "Beef Wellington is a British classic with a storied history tied to Arthur Wellesley, the Duke of Wellington...",
     ingredient: ["Beef", "Mushrooms", "Puff pastry", "Egg wash", "Herbs"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "7",
@@ -71,6 +76,7 @@ export const menuItems = [
       "Grilled Lamb Chops have deep roots in Mediterranean cuisine, particularly in Greek culinary traditions...",
     ingredient: ["Lamb chops", "Rosemary", "Garlic", "Olive oil", "Salt"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "8",
@@ -83,6 +89,7 @@ export const menuItems = [
       "Sous-Vide Salmon represents the fusion of modern French cooking techniques with a reverence for high-quality seafood...",
     ingredient: ["Salmon", "Lemon", "Dill", "Butter", "Salt"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "10",
@@ -94,6 +101,7 @@ export const menuItems = [
     origin: "Seafood Paella hails from the Valencian region of Spain...",
     ingredient: ["Rice", "Shrimp", "Mussels", "Saffron", "Tomatoes"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "11",
@@ -105,6 +113,7 @@ export const menuItems = [
     origin: "Miso-Glazed Black Cod finds its origins in Japanese cuisine...",
     ingredient: ["Black cod", "Miso paste", "Sake", "Sugar", "Soy sauce"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "15",
@@ -117,6 +126,7 @@ export const menuItems = [
       "Spaghetti Carbonara is a Roman specialty, combining simple ingredients like pasta, eggs, pancetta, and pecorino cheese into a creamy and rich dish that's beloved worldwide.",
     ingredient: ["Spaghetti", "Eggs", "Pancetta", "Pecorino cheese", "Pepper"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "16",
@@ -129,6 +139,7 @@ export const menuItems = [
       "Chicken Alfredo originated in Rome but gained fame in the United States, where cream and chicken were added to the traditional buttery, cheesy Alfredo sauce.",
     ingredient: ["Chicken", "Fettuccine", "Cream", "Parmesan", "Butter"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "43",
@@ -141,6 +152,7 @@ export const menuItems = [
       "This dish showcases Mediterranean flavors, pairing tender lamb with a crust of fresh herbs, garlic, and breadcrumbs.",
     ingredient: ["Lamb rack", "Herbs", "Garlic", "Breadcrumbs", "Olive oil"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "44",
@@ -153,6 +165,7 @@ export const menuItems = [
       "A French classic, this dish features chicken breast stuffed with ham and cheese, breaded and fried to golden perfection.",
     ingredient: ["Chicken breast", "Ham", "Swiss cheese", "Breadcrumbs"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "45",
@@ -165,6 +178,7 @@ export const menuItems = [
       "Veal Marsala is an Italian-American favorite, combining tender veal cutlets with a creamy Marsala wine and mushroom sauce.",
     ingredient: ["Veal", "Marsala wine", "Mushrooms", "Garlic", "Butter"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "46",
@@ -177,6 +191,7 @@ export const menuItems = [
       "Stuffed Bell Peppers are a versatile dish popular across Mediterranean and Middle Eastern cuisines, filled with spiced rice and vegetables.",
     ingredient: ["Bell peppers", "Rice", "Tomatoes", "Onion", "Herbs"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "47",
@@ -195,6 +210,7 @@ export const menuItems = [
       "Ground beef",
     ],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "48",
@@ -207,6 +223,7 @@ export const menuItems = [
       "Galbi, or Korean BBQ Short Ribs, is a staple of Korean cuisine, featuring ribs marinated in a blend of soy sauce, garlic, and sugar.",
     ingredient: ["Short ribs", "Soy sauce", "Garlic", "Sugar", "Sesame oil"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "49",
@@ -219,6 +236,7 @@ export const menuItems = [
       "This French technique involves steaming sea bass in parchment paper, locking in flavors of fresh vegetables and herbs.",
     ingredient: ["Sea bass", "Lemon", "Herbs", "Carrots", "Zucchini"],
     category: "Main Courses",
+    isFavorite: false,
   },
   {
     dishId: "50",
@@ -231,6 +249,7 @@ export const menuItems = [
       "A slow-cooked stew from Morocco, this dish combines chicken, preserved lemons, olives, and aromatic spices for a rich, hearty meal.",
     ingredient: ["Chicken", "Preserved lemons", "Olives", "Spices", "Onion"],
     category: "Main Courses",
+    isFavorite: false,
   },
 
   // Appetizers
@@ -245,6 +264,7 @@ export const menuItems = [
       "Pan-Seared Scallops are a delicacy rooted in coastal regions, particularly in New England, USA...",
     ingredient: ["Scallops", "Lemon", "Butter", "Garlic", "Parsley"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "9",
@@ -257,6 +277,7 @@ export const menuItems = [
       "Wagyu Beef Tartare is an exquisite dish that originated in France...",
     ingredient: ["Wagyu beef", "Egg yolk", "Capers", "Onion", "Mustard"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "12",
@@ -269,6 +290,7 @@ export const menuItems = [
       "Caviar with Blinis is a dish rooted in Russian aristocratic traditions...",
     ingredient: ["Caviar", "Blinis", "Crème fraîche", "Chives", "Butter"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "13",
@@ -281,6 +303,7 @@ export const menuItems = [
       "Bruschetta is an iconic Italian appetizer originating in central Italy. It's made from grilled bread rubbed with garlic and topped with fresh tomatoes, olive oil, and basil, embodying the simplicity and flavor of Italian cuisine.",
     ingredient: ["Bread", "Tomatoes", "Basil", "Olive oil", "Garlic"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "14",
@@ -293,6 +316,7 @@ export const menuItems = [
       "Buffalo Chicken Wings are an American classic, first created in Buffalo, New York. These crispy, spicy wings are a favorite at sports events and parties, often paired with celery sticks and blue cheese dip.",
     ingredient: ["Chicken wings", "Hot sauce", "Butter", "Garlic", "Celery"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "51",
@@ -305,6 +329,7 @@ export const menuItems = [
       "Crab Cakes are a beloved appetizer from the coastal United States, especially Maryland, featuring lump crab meat mixed with seasonings and breadcrumbs.",
     ingredient: ["Crab meat", "Breadcrumbs", "Mayonnaise", "Old Bay seasoning"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "52",
@@ -317,6 +342,7 @@ export const menuItems = [
       "Inspired by the classic Italian Caprese salad, these skewers offer a bite-sized combination of tomatoes, mozzarella, and basil, drizzled with balsamic glaze.",
     ingredient: ["Mozzarella", "Cherry tomatoes", "Basil", "Balsamic glaze"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "53",
@@ -329,6 +355,7 @@ export const menuItems = [
       "Gyoza Dumplings are a Japanese twist on Chinese potstickers, filled with a savory mix of pork and vegetables, then pan-fried to perfection.",
     ingredient: ["Pork", "Cabbage", "Ginger", "Garlic", "Soy sauce"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "54",
@@ -341,6 +368,7 @@ export const menuItems = [
       "Stuffed Mushrooms are a versatile appetizer, often served at parties, filled with a savory mixture of cheese, herbs, and breadcrumbs.",
     ingredient: ["Mushrooms", "Breadcrumbs", "Cheese", "Garlic", "Parsley"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "55",
@@ -353,6 +381,7 @@ export const menuItems = [
       "Fried Calamari is a popular Mediterranean appetizer made from tender squid, lightly battered and fried to golden perfection. Served with a side of tangy marinara sauce.",
     ingredient: ["Calamari", "Flour", "Egg", "Breadcrumbs", "Marinara sauce"],
     category: "Appetizers",
+    isFavorite: false,
   },
 
   {
@@ -366,6 +395,7 @@ export const menuItems = [
       "A classic seafood appetizer, Shrimp Cocktail is simple yet elegant, with plump shrimp served chilled alongside a zesty sauce.",
     ingredient: ["Shrimp", "Ketchup", "Horseradish", "Lemon juice"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "57",
@@ -378,11 +408,13 @@ export const menuItems = [
       "Spanakopita is a Greek pastry made with flaky phyllo dough, spinach, and feta cheese, offering a delicious blend of textures and flavors.",
     ingredient: ["Phyllo dough", "Spinach", "Feta", "Onion", "Dill"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "58",
     dishPic: "58.jpg",
     dishName: "Tuna Tartare",
+    isFavorite: false,
     price: 1599,
     alt: "Fresh Tuna Tartare garnished with avocado and sesame seeds",
     rating: 4.7,
@@ -390,6 +422,7 @@ export const menuItems = [
       "A modern seafood delicacy, Tuna Tartare combines fresh tuna with avocado, soy sauce, and sesame oil for a light and flavorful start.",
     ingredient: ["Tuna", "Avocado", "Soy sauce", "Sesame oil", "Lime juice"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "59",
@@ -402,6 +435,7 @@ export const menuItems = [
       "A French-inspired appetizer, Baked Brie is a creamy delight, often paired with fruits or nuts for a sweet-savory balance.",
     ingredient: ["Brie cheese", "Honey", "Walnuts", "Puff pastry"],
     category: "Appetizers",
+    isFavorite: false,
   },
   {
     dishId: "60",
@@ -414,6 +448,7 @@ export const menuItems = [
       "Arancini are a Sicilian specialty, featuring fried rice balls filled with cheese and sometimes meat or peas, perfect for snacking.",
     ingredient: ["Rice", "Mozzarella", "Breadcrumbs", "Eggs", "Marinara"],
     category: "Appetizers",
+    isFavorite: false,
   },
 
   // Beverages
@@ -428,6 +463,7 @@ export const menuItems = [
       "The Iced Latte, a refreshing twist on the classic Italian caffe latte, gained popularity worldwide as a cool, energizing drink perfect for hot days.",
     ingredient: ["Espresso", "Milk", "Ice", "Vanilla syrup (optional)"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "18",
@@ -440,6 +476,7 @@ export const menuItems = [
       "Lemonade is a classic beverage enjoyed globally, with its origins tracing back to the Middle Ages. The combination of lemons, water, and sugar offers a refreshing and tangy drink for all ages.",
     ingredient: ["Lemon", "Sugar", "Water", "Ice"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "23",
@@ -452,6 +489,7 @@ export const menuItems = [
       "Lavender Lemonade combines the tanginess of traditional lemonade with the floral notes of lavender, a flavor pairing inspired by Provence, France.",
     ingredient: ["Lemon", "Sugar", "Water", "Lavender syrup", "Ice"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "24",
@@ -464,6 +502,7 @@ export const menuItems = [
       "This striking blue tea is made from the butterfly pea flower, a plant native to Southeast Asia. Its color changes to purple when mixed with citrus, offering both a visual and flavorful treat.",
     ingredient: ["Butterfly pea flowers", "Water", "Honey", "Lemon"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "25",
@@ -476,6 +515,7 @@ export const menuItems = [
       "Matcha Latte is a modern take on the traditional Japanese tea ceremony, combining finely ground green tea powder with steamed milk for a creamy, earthy drink.",
     ingredient: ["Matcha powder", "Milk", "Sugar", "Hot water"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "26",
@@ -488,6 +528,7 @@ export const menuItems = [
       "Inspired by the Middle East's love for rose flavors and Asia's milk tea trend, this drink combines fragrant rose syrup with creamy milk tea and tapioca pearls.",
     ingredient: ["Milk", "Rose syrup", "Tea", "Tapioca pearls"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "27",
@@ -500,6 +541,7 @@ export const menuItems = [
       "The Charcoal Latte is a health-conscious drink that originated in wellness cafes, using activated charcoal for its detoxifying properties and unique visual appeal.",
     ingredient: ["Activated charcoal", "Milk", "Vanilla", "Sugar"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "28",
@@ -512,6 +554,7 @@ export const menuItems = [
       "Golden Milk, rooted in Ayurvedic traditions in India, combines turmeric with milk and spices to create a warming and health-boosting beverage.",
     ingredient: ["Turmeric", "Milk", "Cinnamon", "Honey", "Black pepper"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "29",
@@ -524,6 +567,7 @@ export const menuItems = [
       "Thai Iced Tea is a sweet and creamy beverage from Thailand, combining brewed tea, condensed milk, and sugar over ice for a refreshing treat.",
     ingredient: ["Black tea", "Condensed milk", "Sugar", "Ice"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "30",
@@ -536,6 +580,7 @@ export const menuItems = [
       "Hibiscus Iced Tea is a tart and floral beverage popular in Africa and the Caribbean, known for its vibrant red hue and refreshing taste.",
     ingredient: ["Hibiscus petals", "Sugar", "Water", "Lime"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "31",
@@ -548,6 +593,7 @@ export const menuItems = [
       "Espresso Tonic is a trendy coffee-based drink originating in Scandinavia, combining the bold flavors of espresso with the fizz of tonic water.",
     ingredient: ["Espresso", "Tonic water", "Ice", "Lemon"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "32",
@@ -560,6 +606,7 @@ export const menuItems = [
       "This refreshing beverage, inspired by Middle Eastern flavors, blends cucumber and mint for a light, hydrating drink perfect for hot weather.",
     ingredient: ["Cucumber", "Mint", "Lemon", "Sugar", "Sparkling water"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "33",
@@ -572,6 +619,7 @@ export const menuItems = [
       "The Elderflower Spritz, popularized in Europe, combines the delicate floral notes of elderflower with citrus and bubbly soda water for a light and elegant drink.",
     ingredient: ["Elderflower syrup", "Sparkling water", "Lemon", "Mint"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "34",
@@ -584,6 +632,7 @@ export const menuItems = [
       "Affogato is an Italian dessert-beverage hybrid, featuring a scoop of vanilla gelato drowned in a hot shot of espresso for a rich and creamy experience.",
     ingredient: ["Vanilla gelato", "Espresso"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "35",
@@ -596,6 +645,7 @@ export const menuItems = [
       "This tropical twist on the classic mojito uses coconut water for a refreshing, non-alcoholic beverage that's both hydrating and flavorful.",
     ingredient: ["Coconut water", "Mint", "Lime", "Sugar", "Ice"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "36",
@@ -608,6 +658,7 @@ export const menuItems = [
       "The Chai Latte brings Indian masala chai to the global stage, combining spiced tea with frothy milk for a warming and aromatic beverage.",
     ingredient: ["Tea", "Milk", "Cinnamon", "Cardamom", "Ginger"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "37",
@@ -620,6 +671,7 @@ export const menuItems = [
       "Cold Brew Coffee, originating from Japan, uses a slow steeping process to create a smooth, low-acidity coffee perfect for hot climates.",
     ingredient: ["Coffee grounds", "Water", "Ice"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "38",
@@ -632,6 +684,7 @@ export const menuItems = [
       "Hailing from the Bordeaux region of France, this wine is celebrated for its bold flavors of dark berries, tobacco, and subtle oak undertones.",
     ingredient: ["Cabernet Sauvignon", "Merlot", "Cabernet Franc"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "39",
@@ -644,6 +697,7 @@ export const menuItems = [
       "Known as the 'King of Wines,' Barolo originates from Italy's Piedmont region, offering complex notes of cherry, rose petals, and truffles.",
     ingredient: ["Nebbiolo grapes"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "40",
@@ -656,6 +710,7 @@ export const menuItems = [
       "This French classic from the Rhône Valley blends Grenache, Syrah, and Mourvèdre grapes to create a wine with earthy, spicy, and fruity layers.",
     ingredient: ["Grenache", "Syrah", "Mourvèdre"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "41",
@@ -668,6 +723,7 @@ export const menuItems = [
       "An elegant wine with origins in Burgundy, Pinot Noir is known for its red fruit flavors, silky texture, and notes of forest floor.",
     ingredient: ["Pinot Noir grapes"],
     category: "Beverages",
+    isFavorite: false,
   },
   {
     dishId: "42",
@@ -680,6 +736,7 @@ export const menuItems = [
       "This German white wine is renowned for its sweetness and acidity balance, featuring flavors of apricots, honey, and a touch of minerality.",
     ingredient: ["Riesling grapes"],
     category: "Beverages",
+    isFavorite: false,
   },
 
   // Sides
@@ -694,6 +751,7 @@ export const menuItems = [
       "Mashed potatoes are a staple of Western cuisine, with garlic-infused versions adding depth and flavor to this beloved side dish.",
     ingredient: ["Potatoes", "Garlic", "Butter", "Cream", "Chives"],
     category: "Sides",
+    isFavorite: false,
   },
   {
     dishId: "20",
@@ -706,6 +764,143 @@ export const menuItems = [
       "Caesar Salad was first created in Tijuana, Mexico, by an Italian-American restaurateur. This crunchy, tangy salad has become a global favorite.",
     ingredient: ["Romaine lettuce", "Croutons", "Parmesan", "Caesar dressing"],
     category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "61",
+    dishPic: "61.jpg",
+    dishName: "Sweet Potato Fries",
+    price: 599,
+    alt: "Crispy Sweet Potato Fries served with a spicy aioli dip",
+    rating: 4.3,
+    origin:
+      "Sweet potato fries, a popular alternative to regular fries, are enjoyed for their natural sweetness and crisp texture.",
+    ingredient: ["Sweet Potatoes", "Olive Oil", "Salt", "Pepper"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "62",
+    dishPic: "62.webp",
+    dishName: "Coleslaw",
+    price: 499,
+    alt: "Creamy Coleslaw with shredded cabbage and carrots",
+    rating: 4.0,
+    origin:
+      "Coleslaw, originating from the Netherlands, is a refreshing side dish made with shredded cabbage and a tangy dressing.",
+    ingredient: ["Cabbage", "Carrots", "Mayonnaise", "Vinegar", "Sugar"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "63",
+    dishPic: "63.webp",
+    dishName: "Baked Mac and Cheese",
+    price: 899,
+    alt: "Cheesy Baked Macaroni with a golden breadcrumb topping",
+    rating: 4.6,
+    origin:
+      "Baked mac and cheese, an American classic, combines elbow macaroni with a creamy cheese sauce, baked to perfection.",
+    ingredient: [
+      "Elbow Macaroni",
+      "Cheddar Cheese",
+      "Milk",
+      "Butter",
+      "Breadcrumbs",
+    ],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "64",
+    dishPic: "64.jpg",
+    dishName: "Steamed Broccoli",
+    price: 399,
+    alt: "Steamed Broccoli lightly seasoned with salt and pepper",
+    rating: 4.1,
+    origin:
+      "Steamed broccoli is a simple, nutritious side dish, popular for its mild flavor and high vitamin content.",
+    ingredient: ["Broccoli", "Salt", "Pepper"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "65",
+    dishPic: "65.webp",
+    dishName: "Cornbread",
+    price: 699,
+    alt: "Golden Cornbread with a soft, crumbly texture",
+    rating: 4.4,
+    origin:
+      "Cornbread, a traditional Southern dish, is made from cornmeal and is a staple at many American dinners.",
+    ingredient: ["Cornmeal", "Flour", "Milk", "Eggs", "Sugar"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "66",
+    dishPic: "66.webp",
+    dishName: "Roasted Vegetables",
+    price: 599,
+    alt: "Colorful Roasted Vegetables with herbs and olive oil",
+    rating: 4.2,
+    origin:
+      "Roasted vegetables are a versatile side dish, combining seasonal veggies with herbs and spices for a healthy option.",
+    ingredient: ["Zucchini", "Carrots", "Bell Peppers", "Olive Oil", "Thyme"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "67",
+    dishPic: "67.webp",
+    dishName: "Onion Rings",
+    price: 599,
+    alt: "Crispy Onion Rings served with a tangy dipping sauce",
+    rating: 4.3,
+    origin:
+      "Onion rings are a classic American side dish, known for their golden, crunchy coating and sweet onion flavor.",
+    ingredient: ["Onions", "Flour", "Breadcrumbs", "Eggs", "Oil"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "68",
+    dishPic: "68.webp",
+    dishName: "Garlic Bread",
+    price: 499,
+    alt: "Toasted Garlic Bread with a buttery garlic and herb spread",
+    rating: 4.7,
+    origin:
+      "Garlic bread, often paired with Italian dishes, is a popular side made from bread infused with garlic and butter.",
+    ingredient: ["Bread", "Butter", "Garlic", "Parsley"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "69",
+    dishPic: "69.jpg",
+    dishName: "Fried Zucchini Sticks",
+    price: 699,
+    alt: "Golden Fried Zucchini Sticks served with marinara sauce",
+    rating: 4.4,
+    origin:
+      "Fried zucchini sticks are a Mediterranean-inspired side, offering a crispy texture and a mild, savory taste.",
+    ingredient: ["Zucchini", "Breadcrumbs", "Flour", "Eggs", "Oil"],
+    category: "Sides",
+    isFavorite: false,
+  },
+  {
+    dishId: "70",
+    dishPic: "70.jpg",
+    dishName: "Rice Pilaf",
+    price: 799,
+    alt: "Fluffy Rice Pilaf with vegetables and herbs",
+    rating: 4.5,
+    origin:
+      "Rice pilaf is a flavorful side dish originating from Middle Eastern cuisine, known for its aromatic spices and vegetables.",
+    ingredient: ["Rice", "Onions", "Carrots", "Chicken Broth", "Spices"],
+    category: "Sides",
+    isFavorite: false,
   },
 
   // Kids' Menu
@@ -720,6 +915,7 @@ export const menuItems = [
       "Cheese Pizza is a universal favorite, originating from Italy's iconic Neapolitan pizza tradition, tailored here for kids with a smaller size and simple toppings.",
     ingredient: ["Pizza dough", "Tomato sauce", "Mozzarella", "Olive oil"],
     category: "Kids' Menu",
+    isFavorite: false,
   },
   {
     dishId: "22",
@@ -732,5 +928,71 @@ export const menuItems = [
       "Chicken Tenders are a popular American kids' meal, offering crunchy, golden-brown strips of chicken breast that are both tasty and easy to eat.",
     ingredient: ["Chicken breast", "Breadcrumbs", "Eggs", "Flour", "Seasoning"],
     category: "Kids' Menu",
+    isFavorite: false,
+  },
+  {
+    dishId: "71",
+    dishPic: "71.webp",
+    dishName: "Mini Burgers",
+    price: 799,
+    alt: "Two Mini Burgers with cheese, lettuce, and ketchup",
+    rating: 4.5,
+    origin:
+      "Mini burgers, or sliders, are a kid-friendly version of the classic hamburger, originating from American diner culture.",
+    ingredient: ["Beef patties", "Mini buns", "Cheese", "Lettuce", "Ketchup"],
+    category: "Kids' Menu",
+    isFavorite: false,
+  },
+  {
+    dishId: "72",
+    dishPic: "72.webp",
+    dishName: "Mac and Cheese",
+    price: 699,
+    alt: "Creamy Mac and Cheese served in a kid-sized portion",
+    rating: 4.7,
+    origin:
+      "Mac and cheese is a timeless comfort food, beloved by kids worldwide for its creamy cheese sauce and tender pasta.",
+    ingredient: ["Macaroni", "Cheddar cheese", "Milk", "Butter"],
+    category: "Kids' Menu",
+    isFavorite: false,
+  },
+  {
+    dishId: "73",
+    dishPic: "73.jpg",
+    dishName: "Grilled Cheese Sandwich",
+    price: 599,
+    alt: "Golden Grilled Cheese Sandwich with melted cheddar",
+    rating: 4.6,
+    origin:
+      "Grilled cheese sandwiches, a quick and easy American classic, are a hit among kids for their gooey cheese filling and crispy bread.",
+    ingredient: ["Bread", "Cheddar cheese", "Butter"],
+    category: "Kids' Menu",
+    isFavorite: false,
+  },
+  {
+    dishId: "74",
+    dishPic: "74.jpg",
+    dishName: "Mini Pancakes",
+    price: 599,
+    alt: "Fluffy Mini Pancakes drizzled with syrup",
+    rating: 4.8,
+    origin:
+      "Mini pancakes are a fun twist on the traditional breakfast staple, perfect for kids with their small, bite-sized portions.",
+    ingredient: ["Flour", "Milk", "Eggs", "Sugar", "Syrup"],
+    category: "Kids' Menu",
+    isFavorite: false,
+  },
+  {
+    dishId: "75",
+    dishPic: "75.webp",
+    dishName: "Fruit Salad",
+    price: 499,
+    alt: "Colorful Fruit Salad with a variety of fresh fruits",
+    rating: 4.3,
+    origin:
+      "Fruit salad is a healthy and refreshing option for kids, offering natural sweetness from a mix of seasonal fruits.",
+    ingredient: ["Apples", "Bananas", "Grapes", "Berries", "Orange slices"],
+    category: "Kids' Menu",
+    isFavorite: false,
   },
 ];

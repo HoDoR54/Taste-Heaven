@@ -31,7 +31,7 @@ homeServiceSection.innerHTML = cardHTML;
 // render popular dishes
 
 const popularDishesDisplay = document.getElementById("js-home-popular-dishes");
-const popularDishes = menuItems.filter((dish) => dish.rating >= 4.5);
+const popularDishes = menuItems.filter((dish) => dish.rating >= 4.8);
 let popularDishesHtml = "";
 
 popularDishes.forEach((dish) => {
