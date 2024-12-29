@@ -41,10 +41,14 @@ popularDishes.forEach((dish) => {
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
                 <i
-                    class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart"
+                    class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart" data-dish-id="${
+                      dish.dishId
+                    }"
                 ></i>
                 <i
-                    class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart"
+                    class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart" data-dish-id="${
+                      dish.dishId
+                    }"
                 ></i>
             </div>
             <div>
@@ -92,10 +96,14 @@ todaysSpecial.forEach((dish) => {
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
                 <i
-                    class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart"
+                    class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart" data-dish-id="${
+                      dish.dishId
+                    }"
                 ></i>
                 <i
-                    class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart"
+                    class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart" data-dish-id="${
+                      dish.dishId
+                    }"
                 ></i>
             </div>
             <div>
