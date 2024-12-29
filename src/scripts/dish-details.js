@@ -1,5 +1,6 @@
 import { getViewingDish } from "./data/dish-view.js";
 import { formatCurrency } from "./utils/money.js";
+import { addToFavToggle } from "./UX/add-to-fav.js";
 
 // render dish details based on which one is clicked
 const viewingDish = getViewingDish();
@@ -60,12 +61,14 @@ let dishDetialHtml = `
         <div class="flex justify-end min-h-full flex-col">
           <button
             class="add-to-favorites p-2 text-md border-dotted rounded h-max border-accent text-accent border-[2px]"
+            data-dish-id="${viewingDish.dishId}"
             >
-              <i class="fa-regular fa-heart add-to-favorite"></i>
+              <i class="fa-regular fa-heart"></i>
               Add to favorites
             </button>
             <button
               class="hidden p-2 text-md rounded added-to-favorites h-max bg-accent text-primary"
+              data-dish-id="${viewingDish.dishId}"
             >
               <i class="fa-solid fa-heart"></i>
               Added to favorites
@@ -80,6 +83,13 @@ const popularText = document.getElementById("js-popular-dish");
 if (viewingDish.rating >= 4.8) {
   popularText.classList.remove("hidden");
 }
+
+// enable the 'add to favorites' toggle
+
+const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
+const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
+
+addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
 // filter suggestions on dish details page
 

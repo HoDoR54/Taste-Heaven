@@ -2,6 +2,7 @@ import { serviceCards } from "./data/html.js";
 import { menuItems } from "./data/menuItems.js";
 import { formatCurrency } from "./utils/money.js";
 import { setViewingDish } from "./data/dish-view.js";
+import { addToFavToggle } from "./UX/add-to-fav.js";
 
 // render service cards
 
@@ -131,6 +132,13 @@ todaysSpecial.forEach((dish) => {
 });
 
 todaysSpecialDisplay.innerHTML = todaysSpecialHtml;
+
+// enable the 'add to favorites' toggle
+
+const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
+const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
+
+addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
 // get the dish user wants to view and return
 
