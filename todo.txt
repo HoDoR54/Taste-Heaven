@@ -10,7 +10,7 @@ add a suggestion list on dish detail page
 
 design a form page for booking a table
 
-design a menu page with stage changes for different categories (and filtering)
+design a menu page with filters for each category -- [done]
 
 today's special auto refresh feature
 
@@ -24,7 +24,7 @@ different cost for different tables
 
 add an yearly discount cycle (use an external API probably)
 
-make the add to favorite button interactive (and display the list in the menu)
+make the add to favorite button interactive (and display the list in the menu) -- [done]
 
 career page (a contact form)
 
