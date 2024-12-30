@@ -54,7 +54,7 @@ popularDishes.forEach((dish) => {
             </div>
             <div>
                 <img
-                src="../images/menu/${dish.dishPic}"
+                src="./src/images/menu/${dish.dishPic}"
                 alt="${dish.alt}"
                 class="w-[300px] h-[200px] object-cover"
                 />
@@ -109,7 +109,7 @@ todaysSpecial.forEach((dish) => {
             </div>
             <div>
                 <img
-                src="../images/menu/${dish.dishPic}"
+                src="./src/images/menu/${dish.dishPic}"
                 alt="${dish.alt}"
                 class="w-[300px] h-[200px] object-cover"
                 />

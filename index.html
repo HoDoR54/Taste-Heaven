@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taste Heaven</title>
-    <link rel="stylesheet" href="../styles/output.css" />
-    <link rel="icon" href="../images/general/title icon.png" type="image/png" />
+    <link rel="stylesheet" href="./src/styles/output.css" />
+    <link
+      rel="icon"
+      href="./src/images/general/title icon.png"
+      type="image/png"
+    />
 
     <!-- font-awesome -->
     <link
@@ -28,14 +32,17 @@
     />
 
     <!-- script -->
-    <script defer type="module" src="../scripts/home.js"></script>
-    <script defer src="../scripts/UX/scroll.js"></script>
+    <script defer type="module" src="./src//scripts/home.js"></script>
+    <script defer src="./src//scripts//UX/scroll.js"></script>
   </head>
   <body class="bg-white bg-primary">
     <!-- hero section -->
-    <section
-      class="relative h-screen bg-[url(../images/home/hero-bg.jpg)] bg-cover flex flex-col"
-    >
+    <section class="relative flex flex-col h-screen overflow-hidden bg-cover">
+      <img
+        src="./src/images/home/hero.jpg"
+        alt=""
+        class="absolute top-0 bottom-0 left-0 right-0 z-0"
+      />
       <!-- logo and navigation -->
       <header class="relative z-40 flex justify-between w-full px-6 py-4">
         <div class="flex items-center flex-1">
@@ -53,16 +60,16 @@
             class="flex justify-around w-full text-center text-md text-primary"
           >
             <li class="cursor-pointer hover:text-accent">
-              <a href="./menu.html">Menu</a>
+              <a href="./src/html/menu.html">Menu</a>
             </li>
             <li class="cursor-pointer hover:text-accent">
-              <a href="./about.html">About Us</a>
+              <a href="./src/html/about.html">About Us</a>
             </li>
             <li class="cursor-pointer hover:text-accent">
-              <a href="./services.html">Our Services</a>
+              <a href="./src/html/services.html">Our Services</a>
             </li>
             <li class="cursor-pointer hover:text-accent">
-              <a href="./career.html">Career</a>
+              <a href="./src/html/career.html">Career</a>
             </li>
           </ul>
         </nav>
@@ -73,7 +80,7 @@
           <button
             class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
           >
-            <a href="./booking.html"
+            <a href="./src/html/booking.html"
               >Book a table <i class="bi bi-arrow-bar-right"></i
             ></a>
           </button>
@@ -96,7 +103,7 @@
           <button
             class="p-3 border-dotted border-[2px] border-primary hover:border-accent text-primary hover:text-accent text-lg rounded"
           >
-            <a href="./menu.html"
+            <a href="./src/html/menu.html"
               >Explore Our Menu <i class="bi bi-arrow-bar-right"></i
             ></a>
           </button>
@@ -151,7 +158,7 @@
           class="flex flex-col w-1/3 overflow-hidden rounded-lg shadow-xl bg-light"
         >
           <img
-            src="../images/home/wine-tasting.webp"
+            src="./src/images/home/wine-tasting.webp"
             class="object-cover w-full h-[200px]"
             alt="Event 1"
           />
@@ -170,7 +177,7 @@
           class="flex flex-col w-1/3 overflow-hidden rounded-lg shadow-xl bg-light"
         >
           <img
-            src="../images/home/unplugged music.jpg"
+            src="./src/images/home/unplugged music.jpg"
             class="object-cover w-full h-[200px]"
             alt="Event 2"
           />
@@ -189,7 +196,7 @@
           class="flex flex-col w-1/3 overflow-hidden rounded-lg shadow-xl bg-light"
         >
           <img
-            src="../images/home/christmas-menu.webp"
+            src="./src/images/home/christmas-menu.webp"
             class="object-cover w-full h-[200px]"
             alt="Event 3"
           />
@@ -213,7 +220,7 @@
           class="relative w-[400px] h-[200px] rounded-tl-full rounded-tr-full bg-accent"
         >
           <img
-            src="../images/home/head-chef.png"
+            src="./src/images/home/head-chef.png"
             class="absolute bottom-0 w-full"
             alt=""
           />
@@ -243,7 +250,7 @@
               >
                 <img
                   class="object-cover w-full aspect-square"
-                  src="../images/home/guest-1.jpg"
+                  src="./src/images/home/guest-1.jpg"
                   alt=""
                 />
               </div>
@@ -252,7 +259,7 @@
               >
                 <img
                   class="object-cover w-full aspect-square"
-                  src="../images/home/guest-2.jpg"
+                  src="./src/images/home/guest-2.jpg"
                   alt=""
                 />
               </div>
@@ -261,7 +268,7 @@
               >
                 <img
                   class="object-cover w-full aspect-square"
-                  src="../images/home/guest-3.jpg"
+                  src="./src/images/home/guest-3.jpg"
                   alt=""
                 />
               </div>
@@ -308,16 +315,16 @@
               <a href="index.html">Home</a>
             </li>
             <li class="hover:underline hover:text-accent">
-              <a href="menu.html">Menu</a>
+              <a href="./src/html/menu.html">Menu</a>
             </li>
             <li class="hover:underline hover:text-accent">
-              <a href="about.html">About us</a>
+              <a href="./src/html/about.html">About us</a>
             </li>
             <li class="hover:underline hover:text-accent">
-              <a href="services.html">Services</a>
+              <a href="./src/html/services.html">Services</a>
             </li>
             <li class="hover:underline hover:text-accent">
-              <a href="career.html">Career</a>
+              <a href="./src/html/career.html">Career</a>
             </li>
           </ul>
         </div>
