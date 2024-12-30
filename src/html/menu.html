@@ -72,22 +72,61 @@
       </div>
     </header>
 
-    <main
-      class="grid h-screen grid-cols-5 overflow-auto scroll-smooth no-scrollbar"
-    >
+    <main class="grid grid-cols-5">
       <section>
-        <div class="p-2 cursor-pointer hover:bg-opacity-80">Category 1</div>
-        <div class="p-2 cursor-pointer hover:bg-opacity-80">Category 2</div>
-        <div class="p-2 cursor-pointer hover:bg-opacity-80">Category 3</div>
-        <div class="p-2 cursor-pointer hover:bg-opacity-80">Category 4</div>
         <div
-          class="p-2 cursor-pointer hover:bg-opacity-80"
-          id="js-menu-favorites"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="all"
         >
-          Favorites
+          All
+        </div>
+        <div
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="highest-rated"
+        >
+          Highest rated
+        </div>
+        <div
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="main-courses"
+        >
+          Main courses
+        </div>
+        <div
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="appetizers"
+        >
+          Appetizers
+        </div>
+        <div
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="sides"
+        >
+          Sides
+        </div>
+        <div
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="beverages"
+        >
+          Beverages
+        </div>
+        <div
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="kids' menu"
+        >
+          Kids' menu
+        </div>
+        <div
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:bg-accent border-b-[2px] border-dark border-dotted"
+          data-filter-name="favorites"
+        >
+          Your favorites
         </div>
       </section>
-      <section class="col-span-4" id="js-menu-display"></section>
+      <section
+        class="h-[80vh] grid gap-4 p-4 col-span-4 overflow-y-scroll shadow-inner scroll-smooth no-scrollbar grid-cols-5"
+        id="js-menu-display"
+      ></section>
     </main>
 
     <!-- footer -->
