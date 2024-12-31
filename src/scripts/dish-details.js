@@ -5,7 +5,6 @@ import { addToFavToggle } from "./UX/add-to-fav.js";
 // render dish details based on which one is clicked
 const viewingDish = getViewingDish();
 document.title = viewingDish.dishName + " - Dish Details";
-
 let ingredients = "";
 
 viewingDish.ingredient.forEach((ingre, idx) => {
@@ -90,6 +89,28 @@ const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
 const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
 
 addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
+
+// add a go back navigation
+
+const navDiv = document.getElementById("js-dish-nav");
+const currentCategory = JSON.parse(localStorage.getItem("menu-category"));
+
+navDiv.innerHTML += `
+  <a href="menu.html" class="cursor-pointer text-accent hover:underline" data-category="${currentCategory}" id="js-back-to-menu"
+    onclick='localStorage.setItem("menu-category", JSON.stringify(${JSON.stringify(
+      currentCategory
+    )}))'>
+    <i class="mx-4 bi bi-arrow-bar-left"></i>${currentCategory}
+  </a>
+`;
+
+// save which category of the menu is clicked
+
+const backToMenu = document.getElementById("js-back-to-menu");
+const targettedCategory = backToMenu.getAttribute("data-category");
+backToMenu.addEventListener("click", () => {
+  localStorage.setItem("menu-category", JSON.stringify(targettedCategory));
+});
 
 // filter suggestions on dish details page
 

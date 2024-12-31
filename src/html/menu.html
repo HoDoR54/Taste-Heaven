@@ -42,28 +42,13 @@
           >
         </span>
       </div>
-      <nav class="flex items-center justify-end flex-1">
-        <ul class="flex justify-around w-full text-center text-md text-primary">
-          <li class="cursor-pointer hover:text-accent">
-            <a href="./menu.html">Menu</a>
-          </li>
-          <li class="cursor-pointer hover:text-accent">
-            <a href="./about.html">About Us</a>
-          </li>
-          <li class="cursor-pointer hover:text-accent">
-            <a href="./services.html">Our Services</a>
-          </li>
-          <li class="cursor-pointer hover:text-accent">
-            <a href="./career.html">Career</a>
-          </li>
-        </ul>
-      </nav>
+
       <div class="flex items-center justify-end flex-1 text-md gap-x-[1rem]">
         <span class="text-primary"
           ><i class="fa-solid fa-phone me-1"></i>+959890079614</span
         >
         <button
-          class="p-2 rounded text-md bg-secondary hover:bg-accent text-dark"
+          class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
         >
           <a href="./booking.html"
             >Book a table <i class="bi bi-arrow-bar-right"></i
@@ -73,55 +58,64 @@
     </header>
 
     <main class="grid grid-cols-5">
-      <section>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-accent border-b-[2px] border-dark border-dotted"
-          data-filter-name="All"
+      <section class="flex flex-col">
+        <a
+          href="menu.html"
+          data-category-name="All"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
         >
           All
-        </div>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-dark border-dotted"
-          data-filter-name="Highest Rated"
+        </a>
+
+        <a
+          href="menu.html"
+          data-category-name="Main Courses"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
         >
-          Highest rated
-        </div>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-dark border-dotted"
-          data-filter-name="Main Courses"
-        >
-          Main courses
-        </div>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-dark border-dotted"
-          data-filter-name="Appetizers"
+          Main Courses
+        </a>
+        <a
+          href="menu.html"
+          data-category-name="Appetizers"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
         >
           Appetizers
-        </div>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-dark border-dotted"
-          data-filter-name="Sides"
+        </a>
+        <a
+          href="menu.html"
+          data-category-name="Sides"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
         >
           Sides
-        </div>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-dark border-dotted"
-          data-filter-name="Beverages"
+        </a>
+        <a
+          href="menu.html"
+          data-category-name="Beverages"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
         >
           Beverages
-        </div>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-dark border-dotted"
-          data-filter-name="Kids' Menu"
+        </a>
+        <a
+          href="menu.html"
+          data-category-name="Kids' Menu"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
         >
-          Kids' menu
-        </div>
-        <div
-          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-dark border-dotted"
-          data-filter-name="Favorites"
+          Kids' Menu
+        </a>
+        <a
+          href="menu.html"
+          data-category-name="Highest Rated"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
         >
-          Your favorites
-        </div>
+          Highest Rated
+        </a>
+        <a
+          href="menu.html"
+          data-category-name="Your Favorites"
+          class="js-menu-filter px-4 py-3 cursor-pointer hover:brightness-75 bg-primary border-b-[2px] border-accent border-dotted"
+        >
+          Your Favorites
+        </a>
       </section>
       <section
         class="h-[90vh] col-span-4 overflow-y-scroll shadow-inner scroll-smooth no-scrollbar"

@@ -2,6 +2,21 @@ import { menuItems } from "./data/menuItems.js";
 import { setViewingDish } from "./data/dish-view.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
 
+// get data from localStorge to decide which category to show first
+
+const categoryToShow = JSON.parse(localStorage.getItem("menu-category"));
+
+// add filtering functions to filter btns
+
+const categoryBtns = document.querySelectorAll(".js-menu-filter");
+
+categoryBtns.forEach((category) => {
+  category.addEventListener("click", () => {
+    const categoryName = category.getAttribute("data-category-name");
+    localStorage.setItem("menu-category", JSON.stringify(categoryName));
+  });
+});
+
 // render the cards on page
 const menuDisplayDiv = document.getElementById("js-menu-display");
 const categoryName = document.getElementById("js-menu-category-display");
@@ -10,12 +25,40 @@ let menuHtml = "";
 function displayDish(title, array) {
   menuHtml = "";
   menuDisplayDiv.innerHTML = "";
-  categoryName.textContent = title;
-  array.forEach((dish) => {
+  if (array.length === 0 && title === "Favorites") {
+    categoryName.classList.add("hidden");
+    menuDisplayDiv.classList.add(
+      "flex",
+      "items-center",
+      "justify-center",
+      "h-full",
+      "text-3xl",
+      "font-semibold",
+      "font-handWritten",
+      "text-accent"
+    );
+    menuDisplayDiv.classList.remove("grid", "grid-cols-5");
+    menuDisplayDiv.textContent =
+      '"No item has been added to your favorites yet."';
+  } else {
+    menuDisplayDiv.classList.remove(
+      "flex",
+      "items-center",
+      "justify-center",
+      "h-full",
+      "text-3xl",
+      "font-semibold",
+      "font-handWritten",
+      "text-accent"
+    );
+    menuDisplayDiv.classList.add("grid", "grid-cols-5");
+    categoryName.classList.remove("hidden");
     categoryName.textContent = title;
-    menuHtml += `
+
+    array.forEach((dish) => {
+      categoryName.textContent = title;
+      menuHtml += `
       <div
-      href="dish-details.html"
       data-dish-category="${dish.category}"
       class="relative overflow-hidden rounded-md cursor-pointer h-max group"
       >
@@ -44,87 +87,76 @@ function displayDish(title, array) {
         </div>
       </div>
     `;
-    menuDisplayDiv.innerHTML = menuHtml;
-  });
-
-  // enable the 'add to favorite' toggle
-
-  const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
-  const addedToFavoritesIcons = document.querySelectorAll(
-    ".added-to-favorites"
-  );
-
-  addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
-}
-displayDish("All items in the menu", menuItems);
-
-// enable radio-like checked function for categories
-
-const categoryBtns = document.querySelectorAll(".js-menu-filter");
-
-categoryBtns.forEach((category) => {
-  category.addEventListener("click", () => {
-    categoryBtns.forEach((cat) => {
-      if (cat.classList.contains("bg-accent")) {
-        cat.classList.remove("bg-accent");
-        cat.classList.add("bg-primary");
-      }
+      menuDisplayDiv.innerHTML = menuHtml;
     });
-    category.classList.add("bg-accent");
-    category.classList.remove("bg-primary");
-  });
-});
 
-// filter the menu via click
+    // enable the 'add to favorite' toggle
 
-categoryBtns.forEach((category) => {
-  category.addEventListener("click", () => {
-    menuDisplayDiv.innerHTML = "";
-    const categoryName = category.getAttribute("data-filter-name");
-    let filteredDishes = [];
-    const filteringFunc = () => {
-      filteredDishes = menuItems.filter(
-        (dish) => dish.category === categoryName
-      );
-    };
-    switch (categoryName) {
-      case "All":
-        filteredDishes = menuItems;
-        break;
-      case "Main Courses":
-      case "Appetizers":
-      case "Beverages":
-      case "Kids' Menu":
-      case "Sides":
-        filteringFunc();
-        break;
-      case "Highest Rated":
-        filteredDishes = menuItems.filter((dish) => dish.rating >= 4.5);
-        break;
-      case "Favorites":
-        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-        favorites.forEach((favorite) => {
-          const favoriteDish = menuItems.find(
-            (dish) => dish.dishId === favorite
-          );
-          filteredDishes.push(favoriteDish);
-        });
-        break;
-    }
-    displayDish(categoryName, filteredDishes);
-  });
-});
-
-// connect the page to dish details page
-
-const viewBtns = document.querySelectorAll(".js-dish-view");
-
-viewBtns.forEach((viewBtn) => {
-  viewBtn.addEventListener("click", () => {
-    const clickedDishId = viewBtn.getAttribute("data-dish-id");
-    const selectedDish = menuItems.find(
-      (dish) => dish.dishId === clickedDishId
+    const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
+    const addedToFavoritesIcons = document.querySelectorAll(
+      ".added-to-favorites"
     );
-    setViewingDish(selectedDish);
+
+    addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
+
+    // connect the page to dish details page
+
+    const viewBtns = document.querySelectorAll(".js-dish-view");
+
+    viewBtns.forEach((viewBtn) => {
+      viewBtn.addEventListener("click", () => {
+        const clickedDishId = viewBtn.getAttribute("data-dish-id");
+        const selectedDish = menuItems.find(
+          (dish) => dish.dishId === clickedDishId
+        );
+        setViewingDish(selectedDish);
+      });
+    });
+  }
+}
+filterMenu(categoryToShow);
+
+// filter the menu
+function filterMenu(filterName) {
+  menuDisplayDiv.innerHTML = "";
+  const categoryName = filterName;
+  document.title = `${categoryName} - Menu`;
+  let filteredDishes = [];
+  const filteringFunc = () => {
+    filteredDishes = menuItems.filter((dish) => dish.category === categoryName);
+  };
+  switch (categoryName) {
+    case "All":
+      filteredDishes = menuItems;
+      break;
+    case "Main Courses":
+    case "Appetizers":
+    case "Beverages":
+    case "Kids' Menu":
+    case "Sides":
+      filteringFunc();
+      break;
+    case "Highest Rated":
+      filteredDishes = menuItems.filter((dish) => dish.rating >= 4.5);
+      break;
+    case "Your Favorites":
+      const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      favorites.forEach((favorite) => {
+        const favoriteDish = menuItems.find((dish) => dish.dishId === favorite);
+        filteredDishes.push(favoriteDish);
+      });
+
+      break;
+  }
+  displayDish(categoryName, filteredDishes);
+  activeBtn(categoryName);
+}
+
+function activeBtn(category) {
+  categoryBtns.forEach((btn) => {
+    if (btn.getAttribute("data-category-name") === category) {
+      btn.classList.remove("bg-primary");
+      btn.classList.add("bg-accent");
+    }
   });
-});
+}

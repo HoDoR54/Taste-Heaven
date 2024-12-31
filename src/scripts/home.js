@@ -63,9 +63,9 @@ popularDishes.forEach((dish) => {
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
                 <p class="text-sm opacity-80">$${formatCurrency(dish.price)}</p>
                 <div class="flex justify-end mt-auto">
-                    <a href="./dish-details.html">
+                    <a href="./src/html/dish-details.html">
                         <button
-                            class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
+                            class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-accent hover:text-accent border-dotted border-[2px]"
                             data-dish-id="${dish.dishId}">
                             View
                         </button>
@@ -79,7 +79,7 @@ popularDishes.forEach((dish) => {
 
 popularDishesDisplay.innerHTML = popularDishesHtml;
 
-// render today's special (changing daily)
+// render today's special
 const todaysSpecialDisplay = document.getElementById("js-home-todays-special");
 let todaysSpecialHtml = "";
 
@@ -118,9 +118,9 @@ todaysSpecial.forEach((dish) => {
                 <h2 class="text-lg font-bold">${dish.dishName}</h2>
                 <p class="text-sm opacity-80">$${formatCurrency(dish.price)}</p>
                 <div class="flex justify-end mt-auto">
-                    <a href="./dish-details.html">
+                    <a href="./src/html/dish-details.html">
                         <button
-                            class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-dark border-dotted border-[2px]"
+                            class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-accent hover:text-accent border-dotted border-[2px]"
                             data-dish-id="${dish.dishId}">
                             View
                         </button>
@@ -151,5 +151,14 @@ viewBtns.forEach((viewBtn) => {
       (dish) => dish.dishId === clickedDishId
     );
     setViewingDish(selectedDish);
+  });
+});
+
+// add an event listener to the menu
+
+const menuPaths = document.querySelectorAll(".js-menu-paths");
+menuPaths.forEach((menuPath) => {
+  menuPath.addEventListener("click", () => {
+    localStorage.setItem("menu-category", JSON.stringify("All"));
   });
 });
