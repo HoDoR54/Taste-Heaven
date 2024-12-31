@@ -130,3 +130,12 @@ filterTwo.addEventListener("click", () => {
 filterThree.addEventListener("click", () => {
   suggestionDiv.textContent = "Others";
 });
+
+// add an event listener to the menu paths
+
+const menuPaths = document.querySelectorAll(".js-menu-paths");
+menuPaths.forEach((menuPath) => {
+  menuPath.addEventListener("click", () => {
+    localStorage.setItem("menu-category", JSON.stringify("All"));
+  });
+});

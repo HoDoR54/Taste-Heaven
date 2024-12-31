@@ -154,7 +154,7 @@ viewBtns.forEach((viewBtn) => {
   });
 });
 
-// add an event listener to the menu
+// add an event listener to the menu paths
 
 const menuPaths = document.querySelectorAll(".js-menu-paths");
 menuPaths.forEach((menuPath) => {
