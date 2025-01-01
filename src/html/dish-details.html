@@ -76,17 +76,20 @@
     <div class="flex px-5 border-b-[2px] border-dotted border-accent">
       <ul class="flex">
         <li
-          class="flex items-center justify-center p-3 cursor-pointer js-filter-1 hover:bg-accent"
+          class="flex items-center justify-center p-3 cursor-pointer js-dish-filter hover:bg-accent"
+          data-filter-name="frequent"
         >
           Frequent matches
         </li>
         <li
-          class="flex items-center justify-center p-3 cursor-pointer js-filter-2 hover:bg-accent"
+          class="flex items-center justify-center p-3 cursor-pointer js-dish-filter hover:bg-accent"
+          data-filter-name="similar"
         >
           Similar Dishes
         </li>
         <li
-          class="flex items-center justify-center p-3 cursor-pointer js-filter-3 hover:bg-accent"
+          class="flex items-center justify-center p-3 cursor-pointer js-dish-filter hover:bg-accent"
+          data-filter-name="others"
         >
           Others
         </li>
@@ -96,7 +99,7 @@
     <!-- suggestions list -->
     <section
       id="js-suggestion-list"
-      class="flex items-center justify-center min-h-[50vh] text-5xl font-bold font-handWritten"
+      class="grid grid-cols-8 gap-4 p-3"
     ></section>
 
     <!-- footer -->

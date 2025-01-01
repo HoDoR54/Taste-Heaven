@@ -1,6 +1,7 @@
 import { getViewingDish } from "./data/dish-view.js";
 import { formatCurrency } from "./utils/money.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
+import { menuItems } from "./data/menuItems.js";
 
 // render dish details based on which one is clicked
 const viewingDish = getViewingDish();
@@ -75,6 +76,13 @@ let dishDetialHtml = `
         </div>
 `;
 
+// enable the 'add to favorite' toggle
+
+const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
+const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
+
+addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
+
 dishDetailsContianer.innerHTML = dishDetialHtml;
 
 const popularText = document.getElementById("js-popular-dish");
@@ -82,13 +90,6 @@ const popularText = document.getElementById("js-popular-dish");
 if (viewingDish.rating >= 4.8) {
   popularText.classList.remove("hidden");
 }
-
-// enable the 'add to favorites' toggle
-
-const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
-const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
-
-addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
 // add a go back navigation
 
@@ -112,30 +113,115 @@ backToMenu.addEventListener("click", () => {
   localStorage.setItem("menu-category", JSON.stringify(targettedCategory));
 });
 
-// filter suggestions on dish details page
-
-const filterOne = document.getElementsByClassName("js-filter-1")[0];
-const filterTwo = document.getElementsByClassName("js-filter-2")[0];
-const filterThree = document.getElementsByClassName("js-filter-3")[0];
-
-const suggestionDiv = document.getElementById("js-suggestion-list");
-
-filterOne.addEventListener("click", () => {
-  suggestionDiv.textContent = "Frequent Matches";
-});
-
-filterTwo.addEventListener("click", () => {
-  suggestionDiv.textContent = "Similar Dishes";
-});
-filterThree.addEventListener("click", () => {
-  suggestionDiv.textContent = "Others";
-});
-
 // add an event listener to the menu paths
 
 const menuPaths = document.querySelectorAll(".js-menu-paths");
 menuPaths.forEach((menuPath) => {
   menuPath.addEventListener("click", () => {
     localStorage.setItem("menu-category", JSON.stringify("All"));
+  });
+});
+
+// filter the suggestion list via click
+
+const filterBtns = document.querySelectorAll(".js-dish-filter");
+const suggestionDisplay = document.getElementById("js-suggestion-list");
+
+function renderCards(array) {
+  suggestionDisplay.innerHTML = "";
+  let suggestionHtml = "";
+  array.forEach((dish) => {
+    suggestionHtml += `
+      <div
+      data-dish-category="${dish.category}"
+      class="relative overflow-hidden rounded-md cursor-pointer h-max group"
+      >
+        <a href="dish-details.html"
+        data-dish-id="${dish.dishId}"
+        class="js-dish-view">
+          <img
+            src="../images/menu/${dish.dishPic}"
+
+            alt="${dish.alt}"
+            class="w-full aspect-square group-hover:brightness-75 object-cover"
+          />
+        </a>
+        <div class="absolute bottom-0 left-0 right-0 p-2 text-primary bg-gradient-to-t from-dark to-[rgba(0, 0, 0, 0.5)]">
+          ${dish.dishName}
+        </div>
+        <div
+        class="absolute top-0 right-0 z-10 flex p-2 rounded-none bg-primary text-dark"
+        >
+            <i
+                class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart" data-dish-id="${dish.dishId}"
+            ></i>
+            <i
+                class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart" data-dish-id="${dish.dishId}"
+            ></i>
+        </div>
+      </div>
+    `;
+  });
+  suggestionDisplay.innerHTML = suggestionHtml;
+  // enable the 'add to favorite' toggle
+
+  const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
+  const addedToFavoritesIcons = document.querySelectorAll(
+    ".added-to-favorites"
+  );
+
+  addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
+}
+
+filterBtns.forEach((filterBtn) => {
+  filterBtn.addEventListener("click", () => {
+    const filterName = filterBtn.getAttribute("data-filter-name");
+    let filteredDishes = [];
+    switch (filterName) {
+      case "frequent":
+        const randomIndexes = [];
+        while (randomIndexes.length <= 5) {
+          const randomIndex = Math.floor(Math.random() * menuItems.length);
+          if (!randomIndexes.includes(randomIndex)) {
+            randomIndexes.push(randomIndex);
+          }
+        }
+
+        filteredDishes = menuItems.filter((_, idx) =>
+          randomIndexes.includes(idx)
+        );
+        filterBtns.forEach((btn) => {
+          btn.classList.add("bg-primary");
+        });
+        filterBtn.classList.remove("bg-primary");
+        filterBtn.classList.add("bg-accent");
+        break;
+      case "similar":
+        filteredDishes = menuItems.filter(
+          (dish) => dish.category === viewingDish.category
+        );
+        filterBtns.forEach((btn) => {
+          btn.classList.add("bg-primary");
+        });
+        filterBtn.classList.remove("bg-primary");
+        filterBtn.classList.add("bg-accent");
+        break;
+      case "others":
+        let others = [];
+        while (others.length <= Math.floor(Math.random() * 15 + 1)) {
+          const randomIndex = Math.floor(Math.random() * menuItems.length);
+          if (!others.includes(randomIndex)) {
+            others.push(randomIndex);
+          }
+        }
+        filteredDishes = menuItems.filter((_, idx) => others.includes(idx));
+        filterBtns.forEach((btn) => {
+          btn.classList.add("bg-primary");
+        });
+        filterBtn.classList.remove("bg-primary");
+        filterBtn.classList.add("bg-accent");
+        break;
+    }
+    renderCards(filteredDishes);
   });
 });
