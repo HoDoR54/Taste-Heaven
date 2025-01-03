@@ -1,33 +1,7 @@
-import { serviceCards } from "./data/html.js";
 import { menuItems } from "./data/menuItems.js";
 import { formatCurrency } from "./utils/money.js";
 import { setViewingDish } from "./data/dish-view.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
-
-// render service cards
-
-const homeServiceSection = document.getElementById("js-home-services-sec");
-let cardHTML = "";
-
-serviceCards.forEach((card) => {
-  cardHTML += `
-    <div class="flex flex-col items-center justify-center flex-1 p-4 max-w-[300px] text-center rounded">
-        <div>
-            ${card.iTag}
-        </div>
-        <div>
-            <h1 class="text-xl font-bold mb-2">${card.title}</h1>
-            <p class="text-dark-700">${card.content}</p>
-        </div>
-        <div class="h-40">
-            <button class="js-order-now mt-5 p-2 text-lg border-[2px] border-dotted border-accent text-accent rounded hover:bg-accent hover:text-dark transition">
-                ${card.btnContent} <i class="bi bi-arrow-bar-right"></i>
-            </button>
-        </div>
-    </div>`;
-});
-
-homeServiceSection.innerHTML = cardHTML;
 
 // render popular dishes
 
@@ -37,7 +11,7 @@ let popularDishesHtml = "";
 
 popularDishes.forEach((dish) => {
   popularDishesHtml += `
-        <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl min-w-[300px] relative">
+        <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl lg:min-w-[300px] min-w-[200px] relative">
             <div
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
@@ -56,7 +30,7 @@ popularDishes.forEach((dish) => {
                 <img
                 src="./src/images/menu/${dish.dishPic}"
                 alt="${dish.alt}"
-                class="w-[300px] h-[200px] object-cover"
+                class="lg:w-[300px] lg:h-[200px] w-[200px] h-[125px] object-cover"
                 />
             </div>
             <div class="p-3 flex flex-col bg-primary">
@@ -92,7 +66,7 @@ const todaysSpecial = getTodaysSpecial(menuItems, 5);
 
 todaysSpecial.forEach((dish) => {
   todaysSpecialHtml += `
-        <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl min-w-[300px] relative">
+        <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl lg:min-w-[300px] min-w-[200px] relative">
             <div
             class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
             >
@@ -111,7 +85,7 @@ todaysSpecial.forEach((dish) => {
                 <img
                 src="./src/images/menu/${dish.dishPic}"
                 alt="${dish.alt}"
-                class="w-[300px] h-[200px] object-cover"
+                class="lg:w-[300px] lg:h-[200px] w-[200px] h-[125px]  object-cover"
                 />
             </div>
             <div class="p-3 flex flex-col bg-primary">
@@ -121,7 +95,10 @@ todaysSpecial.forEach((dish) => {
                     <a href="./src/html/dish-details.html">
                         <button
                             class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-accent hover:text-accent border-dotted border-[2px]"
-                            data-dish-id="${dish.dishId}">
+                            data-dish-id="${dish.dishId}"
+                            onclick="
+                                localStorage.setItem('menu-category', JSON.stringify('All'));
+                            ">
                             View
                         </button>
                     </a>

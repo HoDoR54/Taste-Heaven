@@ -35,27 +35,30 @@
     <script defer type="module" src="./src//scripts/home.js"></script>
     <script defer src="./src//scripts//UX/scroll.js"></script>
   </head>
-  <body class="bg-white bg-primary">
+  <body class="overflow-x-hidden bg-white bg-primary">
     <!-- hero section -->
     <section class="relative flex flex-col h-screen overflow-hidden bg-cover">
       <img
         src="./src/images/home/hero.jpg"
         alt=""
-        class="absolute top-0 bottom-0 left-0 right-0 z-0"
+        class="absolute left-0 right-0 object-cover h-full md:w-full"
       />
       <!-- logo and navigation -->
-      <header class="relative z-40 flex justify-between w-full px-6 py-4">
+      <header
+        class="relative z-40 flex items-center justify-between w-full px-6 py-4"
+      >
         <div class="flex items-center flex-1">
-          <span class="text-2xl text-center cursor-pointer text-primary">
-            <a href="index.html"
-              ><i
+          <span class="text-2xl cursor-pointer text-primary">
+            <a href="index.html">
+              <i
                 class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
-              ></i
-              ><span class="font-semibold">HeAVEn</span></a
-            >
+              ></i>
+              <span class="font-semibold">HeAVEn</span>
+            </a>
           </span>
         </div>
-        <nav class="flex items-center justify-end flex-1">
+        <!-- Navigation for larger screens -->
+        <nav class="items-center justify-end flex-1 hidden lg:flex">
           <ul
             class="flex justify-around w-full text-center text-md text-primary"
           >
@@ -71,15 +74,13 @@
             <li class="cursor-pointer hover:text-accent">
               <a href="./src/html/career.html">Career</a>
             </li>
-            <li class="cursor-pointer hover:text-accent">
-              <a href="./src/html//order.html">Order</a>
-            </li>
           </ul>
         </nav>
-        <div class="flex items-center justify-end flex-1 text-md gap-x-[1rem]">
-          <span class="text-primary"
-            ><i class="fa-solid fa-phone me-1"></i>+959890079614</span
-          >
+        <!-- Contact and Booking button -->
+        <div class="items-center justify-end flex-1 hidden lg:flex gap-x-4">
+          <span class="text-primary">
+            <i class="fa-solid fa-phone"></i> +959890079614
+          </span>
           <button
             class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
           >
@@ -87,6 +88,10 @@
               >Book a table <i class="bi bi-arrow-bar-right"></i
             ></a>
           </button>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="flex items-center justify-end lg:hidden">
+          <i class="text-2xl fa-solid fa-bars text-primary"></i>
         </div>
       </header>
 
@@ -97,14 +102,16 @@
 
       <!-- welcome and call-to-action -->
       <div
-        class="relative z-40 flex flex-col items-start justify-start text-secondary mt-[10vh] ml-[10vw] w-max"
+        class="relative z-40 flex flex-col items-start justify-start text-secondary mt-[25vh] sm:mt-[10vh] ml-[10vw] w-max"
       >
-        <h1 class="text-[5rem] font-handWritten text-center font-extrabold">
+        <h1
+          class="lg:text-[5rem] sm:text-[4rem] text-[3rem] font-handWritten text-center font-extrabold"
+        >
           "THE BEST <br />IN <br />TOWN"
         </h1>
         <div class="flex justify-end w-full">
           <button
-            class="p-3 border-dotted border-[2px] border-primary hover:border-accent text-primary hover:text-accent text-lg rounded"
+            class="p-3 border-dotted border-[2px] border-primary hover:border-accent text-primary hover:text-accent text-sm md:text-md lg:text-lg rounded"
           >
             <a href="./src/html/menu.html"
               >Explore Our Menu <i class="bi bi-arrow-bar-right"></i
@@ -117,8 +124,78 @@
     <!-- service cards -->
     <section
       id="js-home-services-sec"
-      class="flex items-center justify-around px-6 py-[50px] h-max pb-0"
-    ></section>
+      class="grid justify-center w-screen grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3"
+    >
+      <div
+        class="flex flex-col items-center justify-center text-center lg:col-span-1"
+      >
+        <div class="mb-4">
+          <i
+            class="bi bi-bicycle text-[4rem] md:text-[6rem] text-dark mb-4"
+          ></i>
+        </div>
+        <div>
+          <h1 class="mb-2 text-xl font-bold">Delicious Food, Delivered Fast</h1>
+          <p class="text-gray-700">
+            Don't waste your time waiting—savor your favorites in no time!
+          </p>
+        </div>
+        <div class="mt-auto">
+          <button
+            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-white"
+          >
+            Order Now <i class="bi bi-arrow-bar-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center text-center lg:col-span-1"
+      >
+        <div class="mb-4">
+          <i
+            class="bi bi-egg-fried text-[4rem] md:text-[6rem] text-dark mb-4"
+          ></i>
+        </div>
+        <div>
+          <h1 class="mb-2 text-xl font-bold">FDA Approved Ingredients</h1>
+          <p class="text-gray-700">
+            Our dishes are crafted with care, meeting the highest safety and
+            quality standards.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <button
+            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-white"
+          >
+            Learn More <i class="bi bi-arrow-bar-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col items-center justify-center text-center lg:col-span-1 md:col-span-2"
+      >
+        <div class="mb-4">
+          <i
+            class="bi bi-hand-thumbs-up text-[4rem] md:text-[6rem] text-dark mb-4"
+          ></i>
+        </div>
+        <div>
+          <h1 class="mb-2 text-xl font-bold">Excellent Guest Satisfaction</h1>
+          <p class="text-gray-700">
+            We prioritize your happiness with every meal we serve.
+          </p>
+        </div>
+        <div class="mt-auto">
+          <button
+            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-white"
+          >
+            Read Reviews <i class="bi bi-arrow-bar-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
 
     <!-- today's special -->
     <section class="flex px-6 py-[50px] flex-col overflow-hidden">
@@ -156,9 +233,9 @@
           >See all<i class="bi bi-arrow-bar-right"></i
         ></span>
       </h1>
-      <div class="flex w-full gap-6">
+      <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         <div
-          class="flex flex-col w-1/3 overflow-hidden rounded-lg shadow-xl bg-light"
+          class="flex flex-col overflow-hidden rounded-lg shadow-xl bg-light"
         >
           <img
             src="./src/images/home/wine-tasting.webp"
@@ -177,7 +254,7 @@
           </div>
         </div>
         <div
-          class="flex flex-col w-1/3 overflow-hidden rounded-lg shadow-xl bg-light"
+          class="flex flex-col overflow-hidden rounded-lg shadow-xl bg-light"
         >
           <img
             src="./src/images/home/unplugged music.jpg"
@@ -196,7 +273,7 @@
           </div>
         </div>
         <div
-          class="flex flex-col w-1/3 overflow-hidden rounded-lg shadow-xl bg-light"
+          class="flex flex-col overflow-hidden rounded-lg shadow-xl bg-light"
         >
           <img
             src="./src/images/home/christmas-menu.webp"
@@ -217,10 +294,12 @@
     </section>
 
     <!-- testimonial -->
-    <section class="flex min-h-[75vh] min-w-screen text-dark mt-[3rem]">
-      <div class="flex items-center justify-center flex-1 px-[4rem]">
+    <section
+      class="grid grid-cols-1 lg:grid-cols-2 min-w-screen text-dark lg:min-h-[75vh] min-h-[100vh] mt-10 md:mt-0"
+    >
+      <div class="flex items-end justify-center lg:items-center">
         <div
-          class="relative w-[400px] h-[200px] rounded-tl-full rounded-tr-full bg-accent"
+          class="relative sm:w-[400px] sm:h-[200px] w-[300px] h-[150px] rounded-tl-full rounded-tr-full bg-accent"
         >
           <img
             src="./src/images/home/head-chef.png"
@@ -229,67 +308,66 @@
           />
         </div>
       </div>
-      <div class="flex items-center justify-center flex-1 px-[4rem]">
-        <div>
-          <h1 class="text-accent mb-[1.2rem] tracking-[0.4rem] font-semibold">
-            Testimonial
-          </h1>
-          <span class="w-full text-4xl font-bold"
-            >What our guests say about us</span
-          >
-          <div class="mt-[1rem]">
-            <p class="text-xl font-handWritten">
-              "Taste Heaven truly lives up to its name, especially with
-              <strong>Gordon Ramsay</strong> in the kitchen! The food he
-              prepared was divine, the presentation stunning, and the service
-              flawless. The elegant ambiance made it perfect for a special night
-              out. Absolutely worth it!"
-            </p>
-          </div>
-          <div class="flex mt-[1.5rem]">
-            <div class="relative flex">
-              <div
-                class="rounded-full w-12 h-12 border-[3px] overflow-hidden border-primary border-solid"
-              >
-                <img
-                  class="object-cover w-full aspect-square"
-                  src="./src/images/home/guest-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div
-                class="rounded-full w-12 h-12 border-[3px] overflow-hidden border-primary border-solid -translate-x-5"
-              >
-                <img
-                  class="object-cover w-full aspect-square"
-                  src="./src/images/home/guest-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div
-                class="rounded-full w-12 h-12 border-[3px] overflow-hidden border-primary border-solid -translate-x-10"
-              >
-                <img
-                  class="object-cover w-full aspect-square"
-                  src="./src/images/home/guest-3.jpg"
-                  alt=""
-                />
-              </div>
+      <div
+        class="flex flex-col items-center justify-center flex-1 pt-10 text-center lg:max-w-[70%] lg:text-start"
+      >
+        <h1 class="text-accent mb-[1.2rem] tracking-[0.4rem] font-semibold">
+          Testimonial
+        </h1>
+        <span class="w-full text-2xl font-bold sm:text-4xl"
+          >What our guests say about us</span
+        >
+        <div class="mt-[1rem]">
+          <p class="text-xl font-handWritten max-w-[75vw]">
+            "Taste Heaven truly lives up to its name, especially with
+            <strong>Gordon Ramsay</strong> in the kitchen! The food he prepared
+            was divine, the presentation stunning, and the service flawless. The
+            elegant ambiance made it perfect for a special night out. Absolutely
+            worth it!"
+          </p>
+        </div>
+        <div class="flex mt-[1.5rem] items-center justify-center">
+          <div class="relative flex">
+            <div
+              class="rounded-full w-12 h-12 border-[3px] overflow-hidden border-primary border-solid"
+            >
+              <img
+                class="object-cover w-full aspect-square"
+                src="./src/images/home/guest-1.jpg"
+                alt=""
+              />
             </div>
-            <div class="justify-start">
-              <h2 class="font-medium">Guests' Feedback</h2>
-              <div>
-                <span
-                  ><i class="mr-2 text-lg fa-solid fa-star text-secondary"></i
-                  >4.8</span
-                >
-                <span
-                  ><a
-                    href="#"
-                    class="opacity-50 hover:underline hover:opacity-80"
-                    >(1.2k reviews)</a
-                  ></span
-                >
+            <div
+              class="rounded-full w-12 h-12 border-[3px] overflow-hidden border-primary border-solid -translate-x-5"
+            >
+              <img
+                class="object-cover w-full aspect-square"
+                src="./src/images/home/guest-2.jpg"
+                alt=""
+              />
+            </div>
+            <div
+              class="rounded-full w-12 h-12 border-[3px] overflow-hidden border-primary border-solid -translate-x-10"
+            >
+              <img
+                class="object-cover w-full aspect-square"
+                src="./src/images/home/guest-3.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="justify-start">
+            <h2 class="font-medium">Guests' Feedback</h2>
+            <div>
+              <span
+                ><i class="mr-2 text-lg fa-solid fa-star text-secondary"></i
+                >4.8</span
+              >
+              <span
+                ><a href="#" class="opacity-50 hover:underline hover:opacity-80"
+                  >(1.2k reviews)</a
+                ></span
+              >
               </div>
             </div>
           </div>
@@ -313,7 +391,7 @@
           </span>
         </div>
         <div class="p-5">
-          <ul class="flex gap-7">
+          <ul class="grid grid-cols-3 md:grid-cols-6 gap-7">
             <li class="hover:underline hover:text-accent">
               <a href="index.html">Home</a>
             </li>
@@ -329,9 +407,12 @@
             <li class="hover:underline hover:text-accent">
               <a href="./src/html/career.html">Career</a>
             </li>
+            <li class="hover:underline hover:text-accent">
+              <a href="./src/html/order.html">Orders</a>
+            </li>
           </ul>
         </div>
-        <div class="flex gap-5 p-3">
+        <div class="flex gap-5 p-3 mb-5">
           <a href="https://www.instagram.com" target="_blank">
             <div
               class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
@@ -339,7 +420,10 @@
               <i class="fa-brands fa-instagram"></i>
             </div>
           </a>
-          <a href="https://www.facebook.com" target="_blank">
+          <a
+            href="https://www.facebook.com/hpone.nyi.3?mibextid=ZbWKwL"
+            target="_blank"
+          >
             <div
               class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
             >
@@ -347,16 +431,18 @@
             </div>
           </a>
 
-          <a href="https://www.youtube.com/" target="_blank">
+          <a href="https://github.com/HoDoR54" target="_blank">
             <div
               class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
             >
-              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-github"></i>
             </div>
           </a>
         </div>
       </div>
-      <div class="flex justify-between p-3">
+      <div
+        class="flex flex-col items-center p-3 sm:flex-row sm:justify-between"
+      >
         <span>Designed and Developed by Hpone Tauk Nyi.</span>
         <span>Contact: hponetaukyou@gmail.com</span>
       </div>
