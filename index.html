@@ -35,7 +35,7 @@
     <script defer type="module" src="./src//scripts/home.js"></script>
     <script defer src="./src//scripts//UX/scroll.js"></script>
   </head>
-  <body class="overflow-x-hidden bg-white bg-primary">
+  <body class="bg-white bg-primary">
     <!-- hero section -->
     <section class="relative flex flex-col h-screen overflow-hidden bg-cover">
       <img
@@ -45,9 +45,9 @@
       />
       <!-- logo and navigation -->
       <header
-        class="relative z-40 flex items-center justify-between w-full px-6 py-4"
+        class="z-40 grid grid-cols-2 px-4 py-3 lg:grid-cols-4"
       >
-        <div class="flex items-center flex-1">
+        <div class="items-center">
           <span class="text-2xl cursor-pointer text-primary">
             <a href="index.html">
               <i
@@ -58,9 +58,9 @@
           </span>
         </div>
         <!-- Navigation for larger screens -->
-        <nav class="items-center justify-end flex-1 hidden lg:flex">
+        <nav class="hidden col-span-2 lg:!flex items-center justify-center">
           <ul
-            class="flex justify-around w-full text-center text-md text-primary"
+            class="grid w-full grid-cols-4 gap-2 text-center text-md text-primary"
           >
             <li class="cursor-pointer hover:text-accent js-menu-paths">
               <a href="./src/html/menu.html">Menu</a>
@@ -76,11 +76,8 @@
             </li>
           </ul>
         </nav>
-        <!-- Contact and Booking button -->
-        <div class="items-center justify-end flex-1 hidden lg:flex gap-x-4">
-          <span class="text-primary">
-            <i class="fa-solid fa-phone"></i> +959890079614
-          </span>
+        <!-- Booking button -->
+        <div class="hidden lg:!flex justify-end items-center">
           <button
             class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
           >
@@ -102,7 +99,7 @@
 
       <!-- welcome and call-to-action -->
       <div
-        class="relative z-40 flex flex-col items-start justify-start text-secondary mt-[25vh] sm:mt-[10vh] ml-[10vw] w-max"
+        class="relative z-40 flex flex-col items-start justify-start text-secondary mt-[20vh] sm:mt-[10vh] ml-[10vw] w-max"
       >
         <h1
           class="lg:text-[5rem] sm:text-[4rem] text-[3rem] font-handWritten text-center font-extrabold"
@@ -124,7 +121,7 @@
     <!-- service cards -->
     <section
       id="js-home-services-sec"
-      class="grid justify-center w-screen grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3"
+      class="grid justify-center grid-cols-1 gap-4 p-4 mt-10 md:grid-cols-2 lg:grid-cols-3"
     >
       <div
         class="flex flex-col items-center justify-center text-center lg:col-span-1"
@@ -142,7 +139,7 @@
         </div>
         <div class="mt-auto">
           <button
-            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-white"
+            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-primary"
           >
             Order Now <i class="bi bi-arrow-bar-right"></i>
           </button>
@@ -166,7 +163,7 @@
         </div>
         <div class="mt-auto">
           <button
-            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-white"
+            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-primary"
           >
             Learn More <i class="bi bi-arrow-bar-right"></i>
           </button>
@@ -189,7 +186,7 @@
         </div>
         <div class="mt-auto">
           <button
-            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-white"
+            class="px-4 py-2 mt-5 text-lg transition border-2 border-dotted rounded js-order-now border-accent text-accent hover:bg-accent hover:text-primary"
           >
             Read Reviews <i class="bi bi-arrow-bar-right"></i>
           </button>
@@ -207,7 +204,7 @@
       </h1>
       <div
         id="js-home-todays-special"
-        class="flex w-full gap-4 overflow-scroll scroll-smooth no-scrollbar"
+        class="flex gap-4 overflow-scroll scroll-smooth no-scrollbar"
       ></div>
     </section>
 
@@ -221,7 +218,7 @@
       </h1>
       <div
         id="js-home-popular-dishes"
-        class="flex w-full gap-4 overflow-scroll scroll-smooth no-scrollbar"
+        class="flex gap-4 overflow-scroll scroll-smooth no-scrollbar"
       ></div>
     </section>
 
@@ -233,7 +230,7 @@
           >See all<i class="bi bi-arrow-bar-right"></i
         ></span>
       </h1>
-      <div class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         <div
           class="flex flex-col overflow-hidden rounded-lg shadow-xl bg-light"
         >
@@ -295,7 +292,7 @@
 
     <!-- testimonial -->
     <section
-      class="grid grid-cols-1 lg:grid-cols-2 min-w-screen text-dark lg:min-h-[75vh] min-h-[100vh] mt-10 md:mt-0"
+      class="grid grid-cols-1 lg:grid-cols-2 min-w-screen text-dark lg:min-h-[75vh] min-h-[130vh] mt-10 md:mt-0"
     >
       <div class="flex items-end justify-center lg:items-center">
         <div
@@ -314,7 +311,7 @@
         <h1 class="text-accent mb-[1.2rem] tracking-[0.4rem] font-semibold">
           Testimonial
         </h1>
-        <span class="w-full text-2xl font-bold sm:text-4xl"
+        <span class="text-2xl font-bold sm:text-4xl"
           >What our guests say about us</span
         >
         <div class="mt-[1rem]">
