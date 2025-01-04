@@ -3,6 +3,8 @@ import { setViewingDish } from "./data/dish-view.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
+renderGeneralElements();
+
 // get data from localStorge to decide which category to show first
 
 const categoryToShow =
@@ -162,14 +164,3 @@ function activeBtn(category) {
     }
   });
 }
-
-// add an event listener to the menu paths
-
-const menuPaths = document.querySelectorAll(".js-menu-paths");
-menuPaths.forEach((menuPath) => {
-  menuPath.addEventListener("click", () => {
-    localStorage.setItem("menu-category", JSON.stringify("All"));
-  });
-});
-
-renderGeneralElements();

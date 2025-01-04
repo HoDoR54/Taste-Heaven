@@ -8,6 +8,7 @@ import { renderGeneralElements } from "./UX/general-html.js";
 const viewingDish = getViewingDish();
 document.title = viewingDish.dishName + " - Dish Details";
 let ingredients = "";
+console.log(viewingDish);
 
 viewingDish.ingredient.forEach((ingre, idx) => {
   if (idx != "0") {
@@ -57,6 +58,20 @@ let dishDetialHtml = `
             <i class="bi bi-coin"></i>
               Order now
             </button>
+            <button
+            class="add-to-favorites p-2 text-md border-dotted rounded h-max border-accent text-accent border-[2px] md:hidden"
+            data-dish-id="${viewingDish.dishId}"
+            >
+              <i class="fa-regular fa-heart"></i>
+              Add to favorites
+            </button>
+            <button
+              class="hidden p-2 text-md rounded added-to-favorites h-max bg-accent text-primary"
+              data-dish-id="${viewingDish.dishId}"
+            >
+              <i class="fa-solid fa-heart"></i>
+              Added to favorites
+            </button>
           </div>
         </div>
         <div class=" justify-end min-h-full flex-col lg:col-span-1 col-span-4 p-4 hidden md:!flex">
@@ -76,13 +91,6 @@ let dishDetialHtml = `
             </button>
         </div>
 `;
-
-// enable the 'add to favorite' toggle
-
-const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
-const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
-
-addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
 dishDetailsContianer.innerHTML = dishDetialHtml;
 
@@ -112,15 +120,6 @@ const backToMenu = document.getElementById("js-back-to-menu");
 const targettedCategory = backToMenu.getAttribute("data-category");
 backToMenu.addEventListener("click", () => {
   localStorage.setItem("menu-category", JSON.stringify(targettedCategory));
-});
-
-// add an event listener to the menu paths
-
-const menuPaths = document.querySelectorAll(".js-menu-paths");
-menuPaths.forEach((menuPath) => {
-  menuPath.addEventListener("click", () => {
-    localStorage.setItem("menu-category", JSON.stringify("All"));
-  });
 });
 
 // filter the suggestion list via click
@@ -173,6 +172,14 @@ function renderCards(array) {
 
   addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 }
+
+// enable the 'add to favorite' toggle
+
+const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
+const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
+console.log(`${addedToFavoritesIcons.length}, ${addToFavoritesIcons.length}`);
+
+addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
 filterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", () => {

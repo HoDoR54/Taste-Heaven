@@ -19,17 +19,29 @@ export function renderGeneralElements(fileName) {
           <ul
             class="grid w-full grid-cols-4 gap-2 text-center text-md text-primary"
           >
-            <li class="cursor-pointer hover:text-accent js-menu-paths">
-              <a href="./src/html/menu.html">Menu</a>
+            <li class="cursor-pointer hover:text-accent">
+              <a href="${
+                fileName !== "index" ? "./menu.html" : "./src/html/menu.html"
+              }">Menu</a>
             </li>
             <li class="cursor-pointer hover:text-accent">
-              <a href="./src/html/about.html">About Us</a>
+              <a href="${
+                fileName !== "index" ? "./about.html" : "./src/html/about.html"
+              }">About Us</a>
             </li>
             <li class="cursor-pointer hover:text-accent">
-              <a href="./src/html/services.html">Our Services</a>
+              <a href="${
+                fileName !== "index"
+                  ? "./services.html"
+                  : "./src/html/services.html"
+              }">Our Services</a>
             </li>
             <li class="cursor-pointer hover:text-accent">
-              <a href="./src/html/career.html">Career</a>
+              <a href="${
+                fileName !== "index"
+                  ? "./career.html"
+                  : "./src/html/career.html"
+              }">Career</a>
             </li>
           </ul>
         </nav>
@@ -48,6 +60,91 @@ export function renderGeneralElements(fileName) {
           <i class="text-2xl fa-solid fa-bars text-primary"></i>
         </div>
     `;
+  footerContainer.innerHTML = `
+    <div
+      class="flex flex-col items-center justify-center border-b-2 border-dotted border-dark"
+    >
+      <div class="mb-[1.5rem]">
+        <span class="text-3xl text-center cursor-pointer text-dark">
+          <a href="${fileName === "index" ? "index.html" : "../../index.html"}"
+            ><i
+              class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
+            ></i
+            >HeAVEn</a
+          >
+        </span>
+      </div>
+      <div class="p-5">
+        <ul class="grid grid-cols-3 md:grid-cols-6 gap-7">
+          <li class="hover:underline hover:text-accent">
+            <a href="${
+              fileName === "index" ? "index.html" : "../../index.html"
+            }">Home</a>
+          </li>
+          <li class="hover:underline hover:text-accent">
+            <a href="${
+              fileName === "index" ? "./src/html/menu.html" : "./menu.html"
+            }">Menu</a>
+          </li>
+          <li class="hover:underline hover:text-accent">
+            <a href="${
+              fileName === "index" ? "./src/html/about.html" : "./about.html"
+            }">About us</a>
+          </li>
+          <li class="hover:underline hover:text-accent">
+            <a href="${
+              fileName === "index"
+                ? "./src/html/services.html"
+                : "./services.html"
+            }">Services</a>
+          </li>
+          <li class="hover:underline hover:text-accent">
+            <a href="${
+              fileName === "index" ? "./src/html/career.html" : "./career.html"
+            }">Career</a>
+          </li>
+          <li class="hover:underline hover:text-accent">
+            <a href="${
+              fileName === "index" ? "./src/html/order.html" : "./order.html"
+            }">Orders</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex gap-5 p-3 mb-5">
+        <a href="https://www.instagram.com" target="_blank">
+          <div
+            class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </a>
+        <a
+          href="https://www.facebook.com/hpone.nyi.3?mibextid=ZbWKwL"
+          target="_blank"
+        >
+          <div
+            class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
+          >
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+        </a>
+
+        <a href="https://github.com/HoDoR54" target="_blank">
+          <div
+            class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
+          >
+            <i class="fa-brands fa-github"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col items-center p-3 sm:flex-row sm:justify-between"
+    >
+      <span>Designed and Developed by Hpone Tauk Nyi.</span>
+      <span>Contact: hponetaukyou@gmail.com</span>
+    </div>
+  `;
   document.body.innerHTML += `
     <section class="fixed top-0 left-0 bg-primary grid grid-rows-12 min-w-screen min-h-screen translate-x-[100vw] z-50 text-dark" id="js-hamburger-menu">
         <div class="flex items-center p-4 border-b-[2px] border-accent border-dotted" ><i id="js-hamburger-close" class="text-2xl fa-solid fa-xmark"></i></div>
@@ -59,77 +156,6 @@ export function renderGeneralElements(fileName) {
       </section>
     `;
 
-  footerContainer.innerHTML = `
-      <div
-        class="flex flex-col items-center justify-center border-b-2 border-dotted border-dark"
-      >
-        <div class="mb-[1.5rem]">
-          <span class="text-3xl text-center cursor-pointer text-dark">
-            <a href="index.html"
-              ><i
-                class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
-              ></i
-              >HeAVEn</a
-            >
-          </span>
-        </div>
-        <div class="p-5">
-          <ul class="grid grid-cols-3 md:grid-cols-6 gap-7">
-            <li class="hover:underline hover:text-accent">
-              <a href="index.html">Home</a>
-            </li>
-            <li class="hover:underline hover:text-accent js-menu-paths">
-              <a href="./src/html/menu.html">Menu</a>
-            </li>
-            <li class="hover:underline hover:text-accent">
-              <a href="./src/html/about.html">About us</a>
-            </li>
-            <li class="hover:underline hover:text-accent">
-              <a href="./src/html/services.html">Services</a>
-            </li>
-            <li class="hover:underline hover:text-accent">
-              <a href="./src/html/career.html">Career</a>
-            </li>
-            <li class="hover:underline hover:text-accent">
-              <a href="./src/html/order.html">Orders</a>
-            </li>
-          </ul>
-        </div>
-        <div class="flex gap-5 p-3 mb-5">
-          <a href="https://www.instagram.com" target="_blank">
-            <div
-              class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </div>
-          </a>
-          <a
-            href="https://www.facebook.com/hpone.nyi.3?mibextid=ZbWKwL"
-            target="_blank"
-          >
-            <div
-              class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
-            >
-              <i class="fa-brands fa-facebook-f"></i>
-            </div>
-          </a>
-
-          <a href="https://github.com/HoDoR54" target="_blank">
-            <div
-              class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
-            >
-              <i class="fa-brands fa-github"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div
-        class="flex flex-col items-center p-3 sm:flex-row sm:justify-between"
-      >
-        <span>Designed and Developed by Hpone Tauk Nyi.</span>
-        <span>Contact: hponetaukyou@gmail.com</span>
-      </div>
-    `;
   const hamburgerIcon = document.getElementById("js-hamburger-icon");
   const hamburgerMenu = document.getElementById("js-hamburger-menu");
   const hamburgerClose = document.getElementById("js-hamburger-close");
