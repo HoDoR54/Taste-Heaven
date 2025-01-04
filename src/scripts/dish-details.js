@@ -1,6 +1,5 @@
 import { getViewingDish } from "./data/dish-view.js";
 import { formatCurrency } from "./utils/money.js";
-import { addToFavToggle } from "./UX/add-to-fav.js";
 import { menuItems } from "./data/menuItems.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
@@ -58,37 +57,9 @@ let dishDetialHtml = `
             <i class="bi bi-coin"></i>
               Order now
             </button>
-            <button
-            class="add-to-favorites p-2 text-md border-dotted rounded h-max border-accent text-accent border-[2px] md:hidden"
-            data-dish-id="${viewingDish.dishId}"
-            >
-              <i class="fa-regular fa-heart"></i>
-              Add to favorites
-            </button>
-            <button
-              class="hidden p-2 text-md rounded added-to-favorites h-max bg-accent text-primary"
-              data-dish-id="${viewingDish.dishId}"
-            >
-              <i class="fa-solid fa-heart"></i>
-              Added to favorites
-            </button>
           </div>
         </div>
         <div class=" justify-end min-h-full flex-col lg:col-span-1 col-span-4 p-4 hidden md:!flex">
-          <button
-            class="add-to-favorites p-2 text-md border-dotted rounded h-max border-accent text-accent border-[2px]"
-            data-dish-id="${viewingDish.dishId}"
-            >
-              <i class="fa-regular fa-heart"></i>
-              Add to favorites
-            </button>
-            <button
-              class="hidden p-2 text-md rounded added-to-favorites h-max bg-accent text-primary"
-              data-dish-id="${viewingDish.dishId}"
-            >
-              <i class="fa-solid fa-heart"></i>
-              Added to favorites
-            </button>
         </div>
 `;
 
@@ -149,37 +120,11 @@ function renderCards(array) {
         <div class="absolute bottom-0 left-0 right-0 p-2 text-primary bg-gradient-to-t from-dark to-[rgba(0, 0, 0, 0.5)]">
           ${dish.dishName}
         </div>
-        <div
-        class="absolute top-0 right-0 z-10 flex p-2 rounded-none bg-primary text-dark"
-        >
-            <i
-                class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart" data-dish-id="${dish.dishId}"
-            ></i>
-            <i
-                class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart" data-dish-id="${dish.dishId}"
-            ></i>
-        </div>
       </div>
     `;
   });
   suggestionDisplay.innerHTML = suggestionHtml;
-  // enable the 'add to favorite' toggle
-
-  const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
-  const addedToFavoritesIcons = document.querySelectorAll(
-    ".added-to-favorites"
-  );
-
-  addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 }
-
-// enable the 'add to favorite' toggle
-
-const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
-const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
-console.log(`${addedToFavoritesIcons.length}, ${addToFavoritesIcons.length}`);
-
-addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
 filterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", () => {

@@ -1,6 +1,5 @@
 import { menuItems } from "./data/menuItems.js";
 import { setViewingDish } from "./data/dish-view.js";
-import { addToFavToggle } from "./UX/add-to-fav.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
 renderGeneralElements();
@@ -79,29 +78,10 @@ function displayDish(title, array) {
         <div class="absolute bottom-0 left-0 right-0 p-2 text-primary bg-gradient-to-t from-dark to-[rgba(0, 0, 0, 0.5)]">
           ${dish.dishName}
         </div>
-        <div
-        class="absolute top-0 right-0 z-10 flex p-2 rounded-none bg-primary text-dark"
-        >
-            <i
-                class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart" data-dish-id="${dish.dishId}"
-            ></i>
-            <i
-                class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart" data-dish-id="${dish.dishId}"
-            ></i>
-        </div>
       </div>
     `;
       menuDisplayDiv.innerHTML = menuHtml;
     });
-
-    // enable the 'add to favorite' toggle
-
-    const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
-    const addedToFavoritesIcons = document.querySelectorAll(
-      ".added-to-favorites"
-    );
-
-    addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
     // connect the page to dish details page
 

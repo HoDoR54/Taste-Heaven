@@ -1,7 +1,6 @@
 import { menuItems } from "./data/menuItems.js";
 import { formatCurrency } from "./utils/money.js";
 import { setViewingDish } from "./data/dish-view.js";
-import { addToFavToggle } from "./UX/add-to-fav.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
 renderGeneralElements("index");
@@ -10,20 +9,6 @@ renderGeneralElements("index");
 function generateDishHtml(dish) {
   return `
     <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl lg:min-w-[300px] min-w-[200px] relative">
-        <div
-        class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
-        >
-            <i
-                class="text-lg cursor-pointer add-to-favorites fa-regular fa-heart" data-dish-id="${
-                  dish.dishId
-                }"
-            ></i>
-            <i
-                class="hidden text-lg cursor-pointer added-to-favorites fa-solid fa-heart" data-dish-id="${
-                  dish.dishId
-                }"
-            ></i>
-        </div>
         <div>
             <img
             src="./src/images/menu/${dish.dishPic}"
@@ -61,13 +46,6 @@ function getTodaysSpecial(dishes, count) {
 }
 const todaysSpecial = getTodaysSpecial(menuItems, 5);
 todaysSpecialDisplay.innerHTML = todaysSpecial.map(generateDishHtml).join("");
-
-// enable the 'add to favorites' toggle
-
-const addToFavoritesIcons = document.querySelectorAll(".add-to-favorites");
-const addedToFavoritesIcons = document.querySelectorAll(".added-to-favorites");
-
-addToFavToggle(addToFavoritesIcons, addedToFavoritesIcons);
 
 // get the dish user wants to view and return
 

@@ -6,16 +6,6 @@ let testingHtml = "";
 orderedDishes.forEach((dish) => {
   testingHtml += `
         <div class="js-dish overflow-hidden border-dotted border-dark border-[2px] rounded-xl min-w-[300px] relative">
-            <div
-            class="absolute top-0 right-0 z-10 flex p-2 rounded-tr-lg rounded-bl-lg bg-primary text-dark"
-            >
-                <i
-                    class="text-lg cursor-pointer add-to-favorite fa-regular fa-heart"
-                ></i>
-                <i
-                    class="hidden text-lg cursor-pointer added-to-favorite fa-solid fa-heart"
-                ></i>
-            </div>
             <div>
                 <img
                 src="../images/menu/${dish.dishPic}"
