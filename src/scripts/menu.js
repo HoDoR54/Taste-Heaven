@@ -3,11 +3,10 @@ import { setViewingDish } from "./data/dish-view.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
-renderGeneralElements();
-
 // get data from localStorge to decide which category to show first
 
-const categoryToShow = JSON.parse(localStorage.getItem("menu-category"));
+const categoryToShow =
+  JSON.parse(localStorage.getItem("menu-category")) || "All";
 
 // add filtering functions to filter btns
 
@@ -172,3 +171,5 @@ menuPaths.forEach((menuPath) => {
     localStorage.setItem("menu-category", JSON.stringify("All"));
   });
 });
+
+renderGeneralElements();

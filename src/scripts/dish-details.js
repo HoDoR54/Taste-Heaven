@@ -4,8 +4,6 @@ import { addToFavToggle } from "./UX/add-to-fav.js";
 import { menuItems } from "./data/menuItems.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
-renderGeneralElements();
-
 // render dish details based on which one is clicked
 const viewingDish = getViewingDish();
 document.title = viewingDish.dishName + " - Dish Details";
@@ -28,7 +26,7 @@ let dishDetialHtml = `
             class="w-[250px] h-[250px] rounded-lg object-cover"
           />
         </div>
-        <div class="ml-[1rem] col-span-3">
+        <div class="ml-[1rem] md:col-span-3">
           <h2 class="text-3xl font-bold">${viewingDish.dishName}</h2>
           <p class="text-lg font-semibold">$${formatCurrency(
             viewingDish.price
@@ -61,7 +59,7 @@ let dishDetialHtml = `
             </button>
           </div>
         </div>
-        <div class="flex justify-end min-h-full flex-col">
+        <div class=" justify-end min-h-full flex-col lg:col-span-1 col-span-4 p-4 hidden md:!flex">
           <button
             class="add-to-favorites p-2 text-md border-dotted rounded h-max border-accent text-accent border-[2px]"
             data-dish-id="${viewingDish.dishId}"
@@ -228,3 +226,5 @@ filterBtns.forEach((filterBtn) => {
     renderCards(filteredDishes);
   });
 });
+
+renderGeneralElements();

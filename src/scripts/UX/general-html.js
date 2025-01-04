@@ -1,10 +1,12 @@
-export function renderGeneralElements() {
+export function renderGeneralElements(fileName) {
   const headerContainer = document.getElementById("js-header");
   const footerContainer = document.getElementById("js-footer");
   headerContainer.innerHTML = `
         <div class="items-center">
           <span class="text-2xl cursor-pointer text-primary">
-            <a href="index.html">
+            <a href="${
+              fileName !== "index" ? "../../index.html" : "index.html"
+            }">
               <i
                 class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
               ></i>

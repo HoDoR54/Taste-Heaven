@@ -4,8 +4,6 @@ import { setViewingDish } from "./data/dish-view.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
-renderGeneralElements();
-
 // render popular dishes
 
 const popularDishesDisplay = document.getElementById("js-home-popular-dishes");
@@ -142,3 +140,5 @@ menuPaths.forEach((menuPath) => {
     localStorage.setItem("menu-category", JSON.stringify("All"));
   });
 });
+
+renderGeneralElements("index");
