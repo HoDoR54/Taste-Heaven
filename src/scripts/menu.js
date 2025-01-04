@@ -1,6 +1,9 @@
 import { menuItems } from "./data/menuItems.js";
 import { setViewingDish } from "./data/dish-view.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
+import { renderGeneralElements } from "./UX/general-html.js";
+
+renderGeneralElements();
 
 // get data from localStorge to decide which category to show first
 

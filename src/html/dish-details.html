@@ -30,30 +30,10 @@
     <script defer type="module" src="../scripts/dish-details.js"></script>
   </head>
   <body class="bg-primary text-dark">
-    <header class="relative z-40 flex justify-between w-full px-6 py-4 bg-dark">
-      <div class="flex items-center flex-1">
-        <span class="text-2xl text-center cursor-pointer text-primary">
-          <a href="../../index.html"
-            ><i
-              class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
-            ></i
-            ><span class="font-semibold">HeAVEn</span></a
-          >
-        </span>
-      </div>
-      <div class="flex items-center justify-end flex-1 text-md gap-x-[1rem]">
-        <span class="text-primary"
-          ><i class="fa-solid fa-phone me-1"></i>+959890079614</span
-        >
-        <button
-          class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
-        >
-          <a href="./booking.html"
-            >Book a table <i class="bi bi-arrow-bar-right"></i
-          ></a>
-        </button>
-      </div>
-    </header>
+    <header
+      class="relative z-40 flex justify-between w-full px-6 py-4 bg-dark"
+      id="js-header"
+    ></header>
 
     <!-- main section of the page -->
     <main class="px-12 py-5 border-b-[2px] border-dotted border-accent">
@@ -103,68 +83,6 @@
     ></section>
 
     <!-- footer -->
-    <footer class="mt-[2.5rem]">
-      <div
-        class="flex flex-col items-center justify-center border-b-2 border-dotted border-dark"
-      >
-        <div class="mb-[1.5rem]">
-          <span class="text-3xl text-center cursor-pointer text-dark">
-            <a href="../../index.html"
-              ><i
-                class="p-2 rounded text-dark fa-solid fa-utensils bg-secondary mr-1.5"
-              ></i
-              >HeAVEn</a
-            >
-          </span>
-        </div>
-        <div class="p-5">
-          <ul class="flex gap-7">
-            <li class="hover:underline hover:text-accent">
-              <a href="../../index.html">Home</a>
-            </li>
-            <li class="hover:underline hover:text-accent js-menu-paths">
-              <a href="menu.html">Menu</a>
-            </li>
-            <li class="hover:underline hover:text-accent">
-              <a href="about.html">About us</a>
-            </li>
-            <li class="hover:underline hover:text-accent">
-              <a href="services.html">Services</a>
-            </li>
-            <li class="hover:underline hover:text-accent">
-              <a href="career.html">Career</a>
-            </li>
-          </ul>
-        </div>
-        <div class="flex gap-5 p-3">
-          <a href="https://www.instagram.com" target="_blank">
-            <div
-              class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </div>
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <div
-              class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
-            >
-              <i class="fa-brands fa-facebook-f"></i>
-            </div>
-          </a>
-
-          <a href="https://www.youtube.com/" target="_blank">
-            <div
-              class="flex items-center justify-center p-3 rounded-full bg-dark text-primary w-[5rem] cursor-pointer hover:bg-primary hover:text-accent border-dotted border-[2px] border-dark hover:border-accent"
-            >
-              <i class="fa-brands fa-youtube"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="flex justify-between p-3">
-        <span>Designed and Developed by Hpone Tauk Nyi.</span>
-        <span>Contact: hponetaukyou@gmail.com</span>
-      </div>
-    </footer>
+    <footer class="mt-[2.5rem]" id="js-footer"></footer>
   </body>
 </html>

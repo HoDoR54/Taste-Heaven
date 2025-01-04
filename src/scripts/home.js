@@ -2,7 +2,9 @@ import { menuItems } from "./data/menuItems.js";
 import { formatCurrency } from "./utils/money.js";
 import { setViewingDish } from "./data/dish-view.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
-import { applyHamburgerAnimation } from "./UX/hamburger-menu.js";
+import { renderGeneralElements } from "./UX/general-html.js";
+
+renderGeneralElements();
 
 // render popular dishes
 
@@ -140,10 +142,3 @@ menuPaths.forEach((menuPath) => {
     localStorage.setItem("menu-category", JSON.stringify("All"));
   });
 });
-
-// hamburger menu
-
-const hamburgerIcon = document.getElementById("js-hamburger-icon");
-const hamburgerMenu = document.getElementById("js-hamburger-menu");
-const hamburgerClose = document.getElementById("js-hamburger-close");
-applyHamburgerAnimation(hamburgerIcon, hamburgerMenu, hamburgerClose);

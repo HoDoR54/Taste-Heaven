@@ -2,6 +2,9 @@ import { getViewingDish } from "./data/dish-view.js";
 import { formatCurrency } from "./utils/money.js";
 import { addToFavToggle } from "./UX/add-to-fav.js";
 import { menuItems } from "./data/menuItems.js";
+import { renderGeneralElements } from "./UX/general-html.js";
+
+renderGeneralElements();
 
 // render dish details based on which one is clicked
 const viewingDish = getViewingDish();
