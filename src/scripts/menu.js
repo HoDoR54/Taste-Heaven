@@ -1,6 +1,7 @@
 import { menuItems } from "./data/menuItems.js";
 import { setViewingDish } from "./data/dish-view.js";
 import { renderGeneralElements } from "./UX/general-html.js";
+import { applyWheelScroll } from "./UX/scroll.js";
 
 renderGeneralElements();
 
@@ -28,39 +29,11 @@ let menuHtml = "";
 function displayDish(title, array) {
   menuHtml = "";
   menuDisplayDiv.innerHTML = "";
-  if (array.length === 0 && title === "Favorites") {
-    categoryName.classList.add("hidden");
-    menuDisplayDiv.classList.add(
-      "flex",
-      "items-center",
-      "justify-center",
-      "h-full",
-      "text-3xl",
-      "font-semibold",
-      "font-handWritten",
-      "text-accent"
-    );
-    menuDisplayDiv.classList.remove("grid", "grid-cols-5");
-    menuDisplayDiv.textContent =
-      '"No item has been added to your favorites yet."';
-  } else {
-    menuDisplayDiv.classList.remove(
-      "flex",
-      "items-center",
-      "justify-center",
-      "h-full",
-      "text-3xl",
-      "font-semibold",
-      "font-handWritten",
-      "text-accent"
-    );
-    menuDisplayDiv.classList.add("grid", "grid-cols-5");
-    categoryName.classList.remove("hidden");
-    categoryName.textContent = title;
+  categoryName.textContent = title;
 
-    array.forEach((dish) => {
-      categoryName.textContent = title;
-      menuHtml += `
+  array.forEach((dish) => {
+    categoryName.textContent = title;
+    menuHtml += `
       <div
       data-dish-category="${dish.category}"
       class="relative overflow-hidden rounded-md cursor-pointer h-max group"
@@ -80,24 +53,24 @@ function displayDish(title, array) {
         </div>
       </div>
     `;
-      menuDisplayDiv.innerHTML = menuHtml;
+    menuDisplayDiv.innerHTML = menuHtml;
+  });
+
+  // connect the page to dish details page
+
+  const viewBtns = document.querySelectorAll(".js-dish-view");
+
+  viewBtns.forEach((viewBtn) => {
+    viewBtn.addEventListener("click", () => {
+      const clickedDishId = viewBtn.getAttribute("data-dish-id");
+      const selectedDish = menuItems.find(
+        (dish) => dish.dishId === clickedDishId
+      );
+      setViewingDish(selectedDish);
     });
-
-    // connect the page to dish details page
-
-    const viewBtns = document.querySelectorAll(".js-dish-view");
-
-    viewBtns.forEach((viewBtn) => {
-      viewBtn.addEventListener("click", () => {
-        const clickedDishId = viewBtn.getAttribute("data-dish-id");
-        const selectedDish = menuItems.find(
-          (dish) => dish.dishId === clickedDishId
-        );
-        setViewingDish(selectedDish);
-      });
-    });
-  }
+  });
 }
+
 filterMenu(categoryToShow);
 
 // filter the menu
@@ -144,3 +117,8 @@ function activeBtn(category) {
     }
   });
 }
+
+// apply wheel scrolling
+
+const categoryContainer = document.getElementById("js-category-container");
+applyWheelScroll(categoryContainer);

@@ -139,7 +139,7 @@ export function renderGeneralElements(fileName) {
       </div>
     </div>
     <div
-      class="flex flex-col items-center p-3 sm:flex-row sm:justify-between"
+      class="flex sm:text-sm text-xs flex-col items-center p-3 md:flex-row md:justify-between justify-center text-center"
     >
       <span>Designed and Developed by Hpone Tauk Nyi.</span>
       <span>Contact: hponetaukyou@gmail.com</span>
