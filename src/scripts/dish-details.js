@@ -3,11 +3,12 @@ import { formatCurrency } from "./utils/money.js";
 import { menuItems } from "./data/menuItems.js";
 import { renderGeneralElements } from "./UX/general-html.js";
 
+renderGeneralElements();
+
 // render dish details based on which one is clicked
 const viewingDish = getViewingDish();
 document.title = viewingDish.dishName + " - Dish Details";
 let ingredients = "";
-console.log(viewingDish);
 
 viewingDish.ingredient.forEach((ingre, idx) => {
   if (idx != "0") {
@@ -26,7 +27,7 @@ let dishDetialHtml = `
             class="w-[250px] h-[250px] rounded-lg object-cover"
           />
         </div>
-        <div class="ml-[1rem] md:col-span-3">
+        <div class="md:ml-[1rem] ml-0 md:col-span-3">
           <h2 class="text-3xl font-bold">${viewingDish.dishName}</h2>
           <p class="text-lg font-semibold">$${formatCurrency(
             viewingDish.price
@@ -40,7 +41,9 @@ let dishDetialHtml = `
             ></span
           >
           
-          <span id="js-popular-dish" class="hidden ml-3 font-handWritten text-secondary"
+          <span class="${
+            viewingDish.rating >= 4.8 ? "inline" : "hidden"
+          } ml-3 font-handWritten text-secondary"
               >Popular</span
             >
             
@@ -64,12 +67,6 @@ let dishDetialHtml = `
 `;
 
 dishDetailsContianer.innerHTML = dishDetialHtml;
-
-const popularText = document.getElementById("js-popular-dish");
-
-if (viewingDish.rating >= 4.8) {
-  popularText.classList.remove("hidden");
-}
 
 // add a go back navigation
 
@@ -178,5 +175,3 @@ filterBtns.forEach((filterBtn) => {
     renderCards(filteredDishes);
   });
 });
-
-renderGeneralElements();
