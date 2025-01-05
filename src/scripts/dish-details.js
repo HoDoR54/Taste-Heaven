@@ -20,14 +20,14 @@ viewingDish.ingredient.forEach((ingre, idx) => {
 
 const dishDetailsContianer = document.getElementById("js-viewing-dish");
 let dishDetialHtml = `
-    <div>
+    <div class="flex justify-center items-center">
           <img
             src="../images/menu/${viewingDish.dishPic}"
             alt="${viewingDish.alt}"
             class="w-[250px] h-[250px] rounded-lg object-cover"
           />
         </div>
-        <div class="md:ml-[1rem] ml-0 md:col-span-3">
+        <div class="md:ml-[1rem] ml-0 md:col-span-3 px-5 mb-5">
           <h2 class="text-3xl font-bold">${viewingDish.dishName}</h2>
           <p class="text-lg font-semibold">$${formatCurrency(
             viewingDish.price
