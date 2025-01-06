@@ -15,9 +15,9 @@ export function renderGeneralElements(fileName) {
           </span>
         </div>
         <!-- Navigation for larger screens -->
-        <nav class="hidden col-span-2 lg:!flex items-center justify-center">
+        <nav class="hidden lg:col-span-2 lg:!flex items-center justify-center">
           <ul
-            class="grid w-full grid-cols-4 gap-2 text-center text-md text-primary"
+            class="flex w-full gap-x-7 text-center text-md text-primary justify-center items-center"
           >
             <li class="cursor-pointer hover:text-accent">
               <a href="${
@@ -46,7 +46,12 @@ export function renderGeneralElements(fileName) {
           </ul>
         </nav>
         <!-- Booking button -->
-        <div class="hidden lg:!flex justify-end items-center">
+        <div class="hidden lg:!flex justify-end items-center gap-4">
+        <button
+            class="p-2 rounded text-md text-primary border-primary border-dotted border-[2px] hover:text-accent hover:border-accent"
+          >
+            <a href="./src/html/order.html"
+              ><i class="fa-solid fa-cart-shopping"></i> Dish it up</a>
           <button
             class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
           >
@@ -148,11 +153,39 @@ export function renderGeneralElements(fileName) {
   document.body.innerHTML += `
     <section class="fixed top-0 left-0 bg-primary grid grid-rows-12 min-w-screen min-h-screen translate-x-[100vw] z-50 text-dark" id="js-hamburger-menu">
         <div class="flex items-center p-4 border-b-[2px] border-accent border-dotted" ><i id="js-hamburger-close" class="text-2xl fa-solid fa-xmark"></i></div>
-        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="./src/html/menu.html">Menu</a></div>
-        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="./src/html/about.html">About us</a></div>
-        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="./src/html/services.html">Our Services</a></div>
-        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="./src/html/career.html">Career</a></div>
-        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="./src/html/booking.html">Book a table</a></div>
+        ${
+          fileName !== "index"
+            ? `<div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent">
+              <a href="../../index.html">Home</a>
+            </div>`
+            : ""
+        }
+        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="
+            ${fileName === "index" ? "./src/html/menu.html" : "./menu.html"}
+        ">Menu</a></div>
+        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="
+            ${fileName === "index" ? "./src/html/about.html" : "./about.html"}
+        ">About us</a></div>
+        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="
+            ${
+              fileName === "index"
+                ? "./src/html/services.html"
+                : "./services.html"
+            }
+        ">Our Services</a></div>
+        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="
+            ${fileName === "index" ? "./src/html/career.html" : "./career.html"}
+        ">Career</a></div>
+        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="
+            ${
+              fileName === "index"
+                ? "./src/html/booking.html"
+                : "./booking.html"
+            }
+        ">Book a table</a></div>
+        <div class="border-b-[2px] border-accent border-dotted flex items-center justify-center text-lg font-semibold hover:bg-accent"><a href="
+            ${fileName === "index" ? "./src/html/order.html" : "./order.html"}
+        ">Dish it up</a></div>
       </section>
     `;
 

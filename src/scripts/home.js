@@ -1,7 +1,7 @@
 import { menuItems } from "./data/menuItems.js";
 import { formatCurrency } from "./utils/money.js";
 import { setViewingDish } from "./data/dish-view.js";
-import { renderGeneralElements } from "./UX/general-html.js";
+import { renderGeneralElements } from "./data/general-html.js";
 import { applyWheelScroll } from "./UX/scroll.js";
 
 renderGeneralElements("index");

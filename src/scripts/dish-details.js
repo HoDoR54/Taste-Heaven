@@ -1,7 +1,7 @@
 import { getViewingDish } from "./data/dish-view.js";
 import { formatCurrency } from "./utils/money.js";
 import { menuItems } from "./data/menuItems.js";
-import { renderGeneralElements } from "./UX/general-html.js";
+import { renderGeneralElements } from "./data/general-html.js";
 
 renderGeneralElements();
 
