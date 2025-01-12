@@ -60,9 +60,12 @@ const viewBtns = document.querySelectorAll(".js-dish-view");
 viewBtns.forEach((viewBtn) => {
   viewBtn.addEventListener("click", () => {
     const clickedDishId = viewBtn.getAttribute("data-dish-id");
-    console.log(clickedDishId);
     const selectedDish = menuItems.find(
       (dish) => dish.dishId === clickedDishId
+    );
+    localStorage.setItem(
+      "menu-category",
+      JSON.stringify(selectedDish.category)
     );
     setViewingDish(selectedDish);
   });

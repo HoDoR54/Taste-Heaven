@@ -1,3 +1,24 @@
+export class UpdateQuantity {
+  constructor() {
+    this.currentQuantity =
+      JSON.parse(localStorage.getItem("order-quantity")) || 0;
+  }
+
+  getCurrentQuantity() {
+    return this.currentQuantity;
+  }
+
+  updateQuantityDisplay() {
+    const quantityDisplay = document.getElementById("js-quantity-display");
+    if (quantityDisplay) {
+      quantityDisplay.textContent = this.getCurrentQuantity();
+    }
+  }
+}
+
+const updateQuantity = new UpdateQuantity();
+updateQuantity.updateQuantityDisplay();
+
 export function renderGeneralElements(fileName) {
   const headerContainer = document.getElementById("js-header");
   const footerContainer = document.getElementById("js-footer");
@@ -45,21 +66,42 @@ export function renderGeneralElements(fileName) {
             </li>
           </ul>
         </nav>
-        <!-- Booking button -->
+        <!-- Buttons -->
         <div class="hidden lg:!flex justify-end items-center gap-4">
-        <button
-            class="p-2 rounded text-md text-primary border-primary border-dotted border-[2px] hover:text-accent hover:border-accent"
-          >
-            <a href="./src/html/order.html"
-              ><i class="fa-solid fa-cart-shopping"></i> Dish it up</a>
+          <!-- Cart Button -->
           <button
-            class="p-2 rounded text-md bg-primary hover:bg-accent text-dark"
+            class="p-2 group relative rounded text-md text-primary border-primary border-dotted border-[2px] hover:text-accent hover:border-accent"
           >
-            <a href="./src/html/booking.html"
-              >Book a table <i class="bi bi-arrow-bar-right"></i
-            ></a>
+            <a 
+              href="${
+                fileName === "index" ? "./src/html/order.html" : "./order.html"
+              }">
+              <i class="fa-solid fa-cart-shopping"></i> 
+              Dish it up
+            </a>
+            <span ${
+              updateQuantity.getCurrentQuantity() !== 0 ? "flex" : "hidden"
+            }
+              class="group-hover:hidden absolute px-2 py-1 rounded-full bg-red-600 text-primary pointer-events-none text-[0.8rem] -top-[0.6rem] -right-[0.6rem]"
+              id="js-quantity-display"
+            >
+            ${updateQuantity.getCurrentQuantity()}
+            </span>
+          </button>
+
+          <!-- Booking Button -->
+          <button
+            class="p-2 relative rounded text-md bg-primary hover:bg-accent text-dark"
+          >
+            <a href="./src/html/booking.html">
+              Book a table 
+              <i class="bi bi-arrow-bar-right"></i>
+            </a>
           </button>
         </div>
+
+        </div>
+
         <!-- Mobile menu button -->
         <div class="flex items-center justify-end lg:hidden" id="js-hamburger-icon">
           <i class="text-2xl fa-solid fa-bars text-primary"></i>

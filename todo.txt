@@ -6,7 +6,7 @@ make order buttons on home page interactive -- [done]
 
 design dish detail page (a sub-page of the menu) -- [done]
 
-add a suggestion list on dish detail page
+add a suggestion list on dish detail page -- [done]
 
 design a form page for booking a table
 
@@ -24,7 +24,7 @@ different cost for different tables
 
 add an yearly discount cycle (use an external API probably)
 
-make the add to favorite button interactive (and display the list in the menu) -- [done]
+make the add to favorite button interactive (and display the list in the menu)
 
 career page (a contact form)
 

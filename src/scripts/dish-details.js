@@ -1,7 +1,7 @@
 import { getViewingDish } from "./data/dish-view.js";
 import { formatCurrency } from "./utils/money.js";
 import { menuItems } from "./data/menuItems.js";
-import { renderGeneralElements } from "./data/general-html.js";
+import { renderGeneralElements, UpdateQuantity } from "./data/general-html.js";
 
 renderGeneralElements();
 
@@ -55,10 +55,9 @@ let dishDetialHtml = `
             <span>${ingredients}</span>
           </p>
           <div class="mt-3 flex gap-4">
-            
-            <button class="bg-secondary p-2 border-dotted border-[2px] text-dark border-dark rounded hover:bg-primary hover:border-accent hover:text-accent">
+            <button id="js-add-btn" class="bg-secondary p-2 border-dotted border-[2px] text-dark border-dark rounded hover:bg-primary hover:border-accent hover:text-accent">
             <i class="bi bi-coin"></i>
-              Order now
+              Add to your table
             </button>
           </div>
         </div>
@@ -174,4 +173,13 @@ filterBtns.forEach((filterBtn) => {
     }
     renderCards(filteredDishes);
   });
+});
+
+const addBtn = document.getElementById("js-add-btn");
+addBtn.addEventListener("click", () => {
+  let currentQuantity = JSON.parse(localStorage.getItem("order-quantity"));
+  currentQuantity++;
+  localStorage.setItem("order-quantity", currentQuantity);
+  const updateQuantityDisplay = new UpdateQuantity();
+  updateQuantityDisplay.updateQuantityDisplay();
 });
