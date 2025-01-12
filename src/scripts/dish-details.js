@@ -1,7 +1,8 @@
 import { getViewingDish } from "./data/dish-view.js";
 import { formatCurrency } from "./utils/money.js";
 import { menuItems } from "./data/menuItems.js";
-import { renderGeneralElements, UpdateQuantity } from "./data/general-html.js";
+import { renderGeneralElements } from "./data/general-html.js";
+import { OrderManipulation } from "./data/order-dishes.js";
 
 renderGeneralElements();
 
@@ -58,6 +59,9 @@ let dishDetialHtml = `
             <button id="js-add-btn" class="bg-secondary p-2 border-dotted border-[2px] text-dark border-dark rounded hover:bg-primary hover:border-accent hover:text-accent">
             <i class="bi bi-coin"></i>
               Add to your table
+            </button>
+            <button id="js-remove-btn" class="deactivated bg-dark p-2 border-dotted border-[2px] text-primary border-primary rounded hover:bg-primary hover:border-accent hover:text-accent">
+              <i class="fa-solid fa-trash"></i>
             </button>
           </div>
         </div>
@@ -176,10 +180,19 @@ filterBtns.forEach((filterBtn) => {
 });
 
 const addBtn = document.getElementById("js-add-btn");
+const removeBtn = document.getElementById("js-remove-btn");
+const dishDetailsOrder = new OrderManipulation();
+
 addBtn.addEventListener("click", () => {
-  let currentQuantity = JSON.parse(localStorage.getItem("order-quantity"));
-  currentQuantity++;
-  localStorage.setItem("order-quantity", currentQuantity);
-  const updateQuantityDisplay = new UpdateQuantity();
-  updateQuantityDisplay.updateQuantityDisplay();
+  dishDetailsOrder.addOrder(viewingDish.dishId);
+  dishDetailsOrder.updateQuantityDisplay();
+  removeBtn.classList.remove("deactivated");
+  addBtn.classList.add("deactivated");
+});
+
+removeBtn.addEventListener("click", () => {
+  dishDetailsOrder.removeOrder(viewingDish.dishId);
+  dishDetailsOrder.updateQuantityDisplay();
+  addBtn.classList.remove("deactivated");
+  removeBtn.classList.add("deactivated");
 });

@@ -1,23 +1,7 @@
-export class UpdateQuantity {
-  constructor() {
-    this.currentQuantity =
-      JSON.parse(localStorage.getItem("order-quantity")) || 0;
-  }
+import { OrderManipulation } from "./order-dishes.js";
 
-  getCurrentQuantity() {
-    return this.currentQuantity;
-  }
-
-  updateQuantityDisplay() {
-    const quantityDisplay = document.getElementById("js-quantity-display");
-    if (quantityDisplay) {
-      quantityDisplay.textContent = this.getCurrentQuantity();
-    }
-  }
-}
-
-const updateQuantity = new UpdateQuantity();
-updateQuantity.updateQuantityDisplay();
+const headerOrder = new OrderManipulation();
+headerOrder.updateQuantityDisplay();
 
 export function renderGeneralElements(fileName) {
   const headerContainer = document.getElementById("js-header");
@@ -79,13 +63,10 @@ export function renderGeneralElements(fileName) {
               <i class="fa-solid fa-cart-shopping"></i> 
               Dish it up
             </a>
-            <span ${
-              updateQuantity.getCurrentQuantity() !== 0 ? "flex" : "hidden"
-            }
-              class="group-hover:hidden absolute px-2 py-1 rounded-full bg-red-600 text-primary pointer-events-none text-[0.8rem] -top-[0.6rem] -right-[0.6rem]"
-              id="js-quantity-display"
+            <span ${headerOrder.getQuantity() !== 0 ? "flex" : "hidden"}
+              class="group-hover:hidden absolute px-2 py-1 rounded-full bg-red-600 text-primary pointer-events-none text-[0.8rem] -top-[0.6rem] -right-[0.6rem] js-order-quantity-display"
             >
-            ${updateQuantity.getCurrentQuantity()}
+            ${headerOrder.getQuantity()}
             </span>
           </button>
 

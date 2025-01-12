@@ -15,3 +15,8 @@
 .hidden {
   display: none !important;
 }
+
+.deactivated {
+  opacity: 0.5;
+  pointer-events: none;
+}
