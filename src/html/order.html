@@ -41,9 +41,33 @@
         class="grid min-h-screen grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
       >
         <div
-          class="order-2 h-full bg-blue-50 md:col-span-2 lg:col-span-3 md:order-1"
-        ></div>
-        <div class="order-1 h-full bg-red-400 md:order-2"></div>
+          class="order-2 h-full px-12 py-5 md:col-span-2 lg:col-span-3 md:order-1"
+        >
+          <h1 class="mb-5 text-2xl font-bold text-dark">
+            Selected dishes --
+            <span
+              class="px-3 py-2 text-lg font-normal bg-red-600 js-order-quantity-display text-primary"
+            ></span>
+          </h1>
+          <ul class="grid grid-cols-4">
+            <li class="flex items-center justify-center font-semibold">dish</li>
+            <li class="flex items-center justify-center font-semibold">
+              price per dish
+            </li>
+            <li class="flex items-center justify-center font-semibold">
+              quantity
+            </li>
+            <li class="flex items-center justify-center font-semibold">
+              subtotal
+            </li>
+            <hr class="col-span-4 mt-3 border-dashed border-dark" />
+          </ul>
+          <section
+            id="js-ordered-dishes"
+            class="flex flex-col w-full pt-7"
+          ></section>
+        </div>
+        <div class="order-1 h-full md:order-2"></div>
       </section>
       <section></section>
     </main>
