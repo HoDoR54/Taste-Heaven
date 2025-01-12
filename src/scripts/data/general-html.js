@@ -54,7 +54,9 @@ export function renderGeneralElements(fileName) {
         <div class="hidden lg:!flex justify-end items-center gap-4">
           <!-- Cart Button -->
           <button
-            class="p-2 group relative rounded text-md text-primary border-primary border-dotted border-[2px] hover:text-accent hover:border-accent"
+            class=" ${
+              fileName !== "order" ? "inline-block" : "hidden"
+            } p-2 group relative rounded text-md text-primary border-primary border-dotted border-[2px] hover:text-accent hover:border-accent"
           >
             <a 
               href="${

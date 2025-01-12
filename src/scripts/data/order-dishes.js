@@ -7,6 +7,9 @@ export class OrderManipulation {
   getQuantity() {
     return this.quantity;
   }
+  getOrderList() {
+    return orderDishes;
+  }
   addOrder(dishId) {
     orderDishes.push(dishId);
     localStorage.setItem("order-dishes", JSON.stringify(orderDishes));
@@ -29,7 +32,7 @@ export class OrderManipulation {
       ".js-order-quantity-display"
     );
     if (quantityDisplay) {
-      quantityDisplay.textContent = this.getQuantity();
+      quantityDisplay.textContent = this.quantity;
     }
   }
 }
