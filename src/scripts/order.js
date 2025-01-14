@@ -59,6 +59,8 @@ orderedDishes.forEach((orderedDish) => {
 
 orderedDishesContainer.innerHTML = orderedDishesHtml;
 
+renderOrderSummary();
+
 const increaseBtns = document.querySelectorAll(".js-increase");
 const decreaseBtns = document.querySelectorAll(".js-decrease");
 
@@ -67,6 +69,7 @@ increaseBtns.forEach((increaseBtn) => {
     const dishId = increaseBtn.getAttribute("data-dish-id");
     const dish = menuItems.find((item) => item.dishId == dishId);
     orderMani.addOrder(dishId, dish.price);
+    renderOrderSummary();
   });
 });
 
@@ -77,5 +80,46 @@ decreaseBtns.forEach((decreaseBtn) => {
     if (orderMani.getDishQuantity(dishId) !== 0) {
       orderMani.removeOrder(dishId, dish.price);
     }
+    renderOrderSummary();
   });
 });
+
+function renderOrderSummary() {
+  const orderSummaryContainer = document.getElementById("js-order-summary");
+  let total = 0;
+
+  // Loop through the dishes to sum the totals based on quantities in orderMani
+  orderedDishes.forEach((orderedDish) => {
+    const dishQuantity = orderMani.getDishQuantity(orderedDish.dishId);
+    total += orderedDish.price * dishQuantity;
+  });
+
+  let discount = 0;
+  let shippingFee = 0;
+
+  orderSummaryContainer.innerHTML = `
+    <div class="grid grid-cols-3">
+      <p class="col-span-2 font-semibold">Total</p>
+      <p>$ ${formatCurrency(total)}</p>
+    </div>
+    <div class="grid grid-cols-3">
+      <p class="col-span-2 font-semibold">Discount</p>
+      <p>$ ${formatCurrency(discount)}</p>
+    </div>
+    <div class="grid grid-cols-3">
+      <p class="col-span-2 font-semibold">Shipping</p>
+      <p>$ ${formatCurrency(shippingFee)}</p>
+    </div>
+    <hr class="mt-3 border-dashed border-dark" />
+    <div class="grid grid-cols-3">
+      <p class="col-span-2 font-semibold">Grand total</p>
+      <p>$ ${formatCurrency(total + shippingFee - discount)}</p>
+    </div>
+    <hr class="border-dashed border-dark" />
+    <button
+      class="flex items-center justify-center py-3 rounded-md bg-dark hover:text-dark text-primary hover:bg-accent"
+    >
+      Order
+    </button>
+  `;
+}
