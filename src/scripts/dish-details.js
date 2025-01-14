@@ -3,6 +3,7 @@ import { formatCurrency } from "./utils/money.js";
 import { menuItems } from "./data/menuItems.js";
 import { renderGeneralElements } from "./data/general-html.js";
 import { OrderManipulation } from "./data/order-dishes.js";
+import { Messages } from "./utils/message-box.js";
 
 renderGeneralElements();
 
@@ -19,6 +20,7 @@ viewingDish.ingredient.forEach((ingre, idx) => {
   }
 });
 
+const messages = new Messages();
 const dishDetailsOrder = new OrderManipulation();
 
 let isAdded =
@@ -195,18 +197,12 @@ addBtn.addEventListener("click", () => {
   dishDetailsOrder.addOrder(viewingDish.dishId);
   removeBtn.classList.remove("deactivated");
   addBtn.classList.add("deactivated");
-  localStorage.setItem(
-    "is-added-" + JSON.stringify(viewingDish.dishId),
-    JSON.stringify(true)
-  );
+  messages.getAlertBox("Added");
 });
 
 removeBtn.addEventListener("click", () => {
   dishDetailsOrder.removeOrder(viewingDish.dishId);
   addBtn.classList.remove("deactivated");
   removeBtn.classList.add("deactivated");
-  localStorage.setItem(
-    "is-added-" + JSON.stringify(viewingDish.dishId),
-    JSON.stringify(false)
-  );
+  messages.getAlertBox("Removed");
 });

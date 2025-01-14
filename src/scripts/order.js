@@ -2,10 +2,13 @@ import { OrderManipulation } from "./data/order-dishes.js";
 import { menuItems } from "./data/menuItems.js";
 import { renderGeneralElements } from "./data/general-html.js";
 import { formatCurrency } from "./utils/money.js";
+import { Messages } from "./utils/message-box.js";
 
 renderGeneralElements("order");
 
-let orderMani = new OrderManipulation();
+const messages = new Messages();
+
+const orderMani = new OrderManipulation();
 const orders = orderMani.getOrderList();
 const orderedDishes = menuItems.filter((dish) => orders.includes(dish.dishId));
 const orderedDishesContainer = document.getElementById("js-ordered-dishes");
@@ -70,6 +73,7 @@ increaseBtns.forEach((increaseBtn) => {
     const dish = menuItems.find((item) => item.dishId == dishId);
     orderMani.addOrder(dishId, dish.price);
     renderOrderSummary();
+    messages.getAlertBox(`+1 ${dish.dishName}`);
   });
 });
 
@@ -81,6 +85,7 @@ decreaseBtns.forEach((decreaseBtn) => {
       orderMani.removeOrder(dishId, dish.price);
     }
     renderOrderSummary();
+    messages.getAlertBox(`-1 ${dish.dishName}`);
   });
 });
 
