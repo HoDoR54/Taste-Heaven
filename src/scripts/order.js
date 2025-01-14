@@ -71,9 +71,16 @@ increaseBtns.forEach((increaseBtn) => {
   increaseBtn.addEventListener("click", () => {
     const dishId = increaseBtn.getAttribute("data-dish-id");
     const dish = menuItems.find((item) => item.dishId == dishId);
-    orderMani.addOrder(dishId, dish.price);
-    renderOrderSummary();
-    messages.getAlertBox(`+1 ${dish.dishName}`);
+    const totalQuantity = orderMani.getQuantity();
+    if (totalQuantity < 9) {
+      orderMani.addOrder(dishId, dish.price);
+      renderOrderSummary();
+      messages.getAlertBox(`+1 ${dish.dishName}`);
+    } else {
+      messages.getWarning(
+        "An order of 10 servings and above must have a reservation!"
+      );
+    }
   });
 });
 
