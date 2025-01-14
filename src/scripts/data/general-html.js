@@ -7,7 +7,7 @@ export function renderGeneralElements(fileName) {
   const headerContainer = document.getElementById("js-header");
   const footerContainer = document.getElementById("js-footer");
   headerContainer.innerHTML = `
-        <div class="items-center">
+        <div class="items-center flex-1">
           <span class="text-2xl cursor-pointer text-primary">
             <a href="${
               fileName !== "index" ? "../../index.html" : "index.html"
@@ -20,7 +20,7 @@ export function renderGeneralElements(fileName) {
           </span>
         </div>
         <!-- Navigation for larger screens -->
-        <nav class="hidden lg:col-span-2 lg:!flex items-center justify-center">
+        <nav class="hidden flex-1 lg:!flex items-center justify-center">
           <ul
             class="flex w-full gap-x-7 text-center text-md text-primary justify-center items-center"
           >
@@ -51,11 +51,11 @@ export function renderGeneralElements(fileName) {
           </ul>
         </nav>
         <!-- Buttons -->
-        <div class="hidden lg:!flex justify-end items-center gap-4">
+        <div class="hidden flex-1 lg:!flex justify-end items-center gap-4">
           <!-- Cart Button -->
           <button
             class=" ${
-              fileName !== "order" ? "inline-block" : "hidden"
+              fileName !== "order" ? "" : "hidden"
             } p-2 group relative rounded text-md text-primary border-primary border-dotted border-[2px] hover:text-accent hover:border-accent"
           >
             <a 
@@ -65,8 +65,10 @@ export function renderGeneralElements(fileName) {
               <i class="fa-solid fa-cart-shopping"></i> 
               Dish it up
             </a>
-            <span ${headerOrder.getQuantity() !== 0 ? "flex" : "hidden"}
-              class="group-hover:hidden absolute px-2 py-1 rounded-full bg-red-600 text-primary pointer-events-none text-[0.8rem] -top-[0.6rem] -right-[0.6rem] js-order-quantity-display"
+            <span
+              class=" ${
+                headerOrder.getQuantity() !== 0 ? "flex" : "hidden"
+              } group-hover:hidden absolute px-2 py-1 rounded-full bg-red-600 text-primary pointer-events-none text-[0.8rem] -top-[0.6rem] -right-[0.6rem] js-order-quantity-display"
             >
             ${headerOrder.getQuantity()}
             </span>

@@ -22,20 +22,60 @@ orderedDishes.forEach((orderedDish) => {
             <img
                 src="../images/menu/${orderedDish.dishPic}"
                 alt="${orderedDish.alt}"
-                class="object-cover w-full h-full"
+                class="object-cover w-full h-full col-span-4 md:col-span-1"
             />
             <span
-                class="absolute bottom-0 flex items-center justify-center w-full text-lg text-primary bg-gradient-to-t from-dark to-transparent"
+                class="absolute bottom-0 flex items-center text-center px-2 justify-center w-full text-lg text-primary bg-gradient-to-t from-dark to-transparent"
                 >${orderedDish.dishName}</span
             >
             </div>
             <div class="flex items-center justify-center">$ ${formatCurrency(
               orderedDish.price
             )}</div>
-            <div class="flex items-center justify-center">Haha</div>
-            <div class="flex items-center justify-center">Hehe</div>
+            <div class="flex items-center justify-center">
+              <div class="flex gap-4">
+                <div data-dish-id="${
+                  orderedDish.dishId
+                }" class="js-decrease bg-slate-300 min-w-[2rem] flex items-center justify-center active:scale-100 hover:scale-105 cursor-pointer px-2 py-1 rounded-sm">-</div>
+                <div data-dish-id="${
+                  orderedDish.dishId
+                }" class="js-dish-quantity bg-white flex items-center justify-center min-w-[3rem] border-accent border-dashed border-[2px]">${orderMani.getDishQuantity(
+    orderedDish.dishId
+  )}</div>
+                <div data-dish-id="${
+                  orderedDish.dishId
+                }" class="js-increase bg-slate-300 min-w-[2rem] flex items-center justify-center active:scale-100 hover:scale-105 cursor-pointer px-2 py-1 rounded-sm">+</div>
+              </div>
+            </div>
+            <div data-dish-id="${
+              orderedDish.dishId
+            }" class="js-subtotal-display flex items-center justify-center">${orderMani.getSubtotal(
+    orderedDish.dishId,
+    orderedDish.price
+  )}</div>
         </div>
     `;
 });
 
 orderedDishesContainer.innerHTML = orderedDishesHtml;
+
+const increaseBtns = document.querySelectorAll(".js-increase");
+const decreaseBtns = document.querySelectorAll(".js-decrease");
+
+increaseBtns.forEach((increaseBtn) => {
+  increaseBtn.addEventListener("click", () => {
+    const dishId = increaseBtn.getAttribute("data-dish-id");
+    const dish = menuItems.find((item) => item.dishId == dishId);
+    orderMani.addOrder(dishId, dish.price);
+  });
+});
+
+decreaseBtns.forEach((decreaseBtn) => {
+  decreaseBtn.addEventListener("click", () => {
+    const dishId = decreaseBtn.getAttribute("data-dish-id");
+    const dish = menuItems.find((item) => item.dishId == dishId);
+    if (orderMani.getDishQuantity(dishId) !== 0) {
+      orderMani.removeOrder(dishId, dish.price);
+    }
+  });
+});

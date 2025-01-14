@@ -19,8 +19,13 @@ viewingDish.ingredient.forEach((ingre, idx) => {
   }
 });
 
-const dishDetailsContianer = document.getElementById("js-viewing-dish");
-let dishDetialHtml = `
+const dishDetailsOrder = new OrderManipulation();
+
+let isAdded =
+  dishDetailsOrder.getOrderList().includes(viewingDish.dishId) || false;
+
+const dishDetailsContainer = document.getElementById("js-viewing-dish");
+let dishDetailHtml = `
     <div class="flex justify-center items-center">
           <img
             src="../images/menu/${viewingDish.dishPic}"
@@ -56,11 +61,15 @@ let dishDetialHtml = `
             <span>${ingredients}</span>
           </p>
           <div class="mt-3 flex gap-4">
-            <button id="js-add-btn" class="bg-secondary p-2 border-dotted border-[2px] text-dark border-dark rounded hover:bg-primary hover:border-accent hover:text-accent">
+            <button id="js-add-btn" class="${
+              isAdded ? "deactivated" : ""
+            } bg-secondary p-2 border-dotted border-[2px] text-dark border-dark rounded hover:bg-primary hover:border-accent hover:text-accent">
             <i class="bi bi-coin"></i>
               Add to your table
             </button>
-            <button id="js-remove-btn" class="deactivated bg-dark p-2 border-dotted border-[2px] text-primary border-primary rounded hover:bg-primary hover:border-accent hover:text-accent">
+            <button id="js-remove-btn" class="${
+              !isAdded ? "deactivated" : ""
+            } bg-dark p-2 border-dotted border-[2px] text-primary border-primary rounded hover:bg-primary hover:border-accent hover:text-accent">
               <i class="fa-solid fa-trash"></i>
             </button>
           </div>
@@ -69,7 +78,7 @@ let dishDetialHtml = `
         </div>
 `;
 
-dishDetailsContianer.innerHTML = dishDetialHtml;
+dishDetailsContainer.innerHTML = dishDetailHtml;
 
 // add a go back navigation
 
@@ -181,18 +190,23 @@ filterBtns.forEach((filterBtn) => {
 
 const addBtn = document.getElementById("js-add-btn");
 const removeBtn = document.getElementById("js-remove-btn");
-const dishDetailsOrder = new OrderManipulation();
 
 addBtn.addEventListener("click", () => {
   dishDetailsOrder.addOrder(viewingDish.dishId);
-  dishDetailsOrder.updateQuantityDisplay();
   removeBtn.classList.remove("deactivated");
   addBtn.classList.add("deactivated");
+  localStorage.setItem(
+    "is-added-" + JSON.stringify(viewingDish.dishId),
+    JSON.stringify(true)
+  );
 });
 
 removeBtn.addEventListener("click", () => {
   dishDetailsOrder.removeOrder(viewingDish.dishId);
-  dishDetailsOrder.updateQuantityDisplay();
   addBtn.classList.remove("deactivated");
   removeBtn.classList.add("deactivated");
+  localStorage.setItem(
+    "is-added-" + JSON.stringify(viewingDish.dishId),
+    JSON.stringify(false)
+  );
 });
