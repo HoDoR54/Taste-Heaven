@@ -10,57 +10,67 @@ const messages = new Messages();
 
 const orderMani = new OrderManipulation();
 const orders = orderMani.getOrderList();
-const orderedDishes = menuItems.filter((dish) => orders.includes(dish.dishId));
-const orderedDishesContainer = document.getElementById("js-ordered-dishes");
-let orderedDishesHtml = "";
+const orderedDishes =
+  menuItems.filter((dish) => orders.includes(dish.dishId)) || [];
 
-orderedDishes.forEach((orderedDish) => {
-  orderedDishesHtml += `
-        <div class="grid grid-cols-4 py-3 mb-4 js-ordered-dish" data-dish-id="${
-          orderedDish.dishId
-        }">
-            <div
-            class="relative flex items-center justify-center overflow-hidden rounded-md h-[150px]"
-            >
-            <img
-                src="../images/menu/${orderedDish.dishPic}"
-                alt="${orderedDish.alt}"
-                class="object-cover w-full h-full col-span-4 md:col-span-1"
-            />
-            <span
-                class="absolute bottom-0 flex items-center text-center px-2 justify-center w-full text-lg text-primary bg-gradient-to-t from-dark to-transparent"
-                >${orderedDish.dishName}</span
-            >
-            </div>
-            <div class="flex items-center justify-center">$ ${formatCurrency(
-              orderedDish.price
-            )}</div>
-            <div class="flex items-center justify-center">
-              <div class="flex gap-4">
-                <div data-dish-id="${
-                  orderedDish.dishId
-                }" class="js-decrease bg-slate-300 min-w-[2rem] flex items-center justify-center active:scale-100 hover:scale-105 cursor-pointer px-2 py-1 rounded-sm">-</div>
-                <div data-dish-id="${
-                  orderedDish.dishId
-                }" class="js-dish-quantity bg-white flex items-center justify-center min-w-[3rem] border-accent border-dashed border-[2px]">${orderMani.getDishQuantity(
-    orderedDish.dishId
-  )}</div>
-                <div data-dish-id="${
-                  orderedDish.dishId
-                }" class="js-increase bg-slate-300 min-w-[2rem] flex items-center justify-center active:scale-100 hover:scale-105 cursor-pointer px-2 py-1 rounded-sm">+</div>
-              </div>
-            </div>
-            <div data-dish-id="${
+function renderOrders() {
+  const orderedDishesContainer = document.getElementById("js-ordered-dishes");
+  let orderedDishesHtml = "";
+  if (orderedDishes.length !== 0) {
+    orderedDishes.forEach((orderedDish) => {
+      orderedDishesHtml += `
+            <div class="grid grid-cols-4 py-3 mb-4 js-ordered-dish" data-dish-id="${
               orderedDish.dishId
-            }" class="js-subtotal-display flex items-center justify-center">${orderMani.getSubtotal(
-    orderedDish.dishId,
-    orderedDish.price
-  )}</div>
-        </div>
+            }">
+                <div
+                class="relative flex items-center justify-center overflow-hidden rounded-md h-[150px]"
+                >
+                <img
+                    src="../images/menu/${orderedDish.dishPic}"
+                    alt="${orderedDish.alt}"
+                    class="object-cover w-full h-full col-span-4 md:col-span-1"
+                />
+                <span
+                    class="absolute bottom-0 flex items-center text-center px-2 justify-center w-full text-lg text-primary bg-gradient-to-t from-dark to-transparent"
+                    >${orderedDish.dishName}</span
+                >
+                </div>
+                <div class="flex items-center justify-center">$ ${formatCurrency(
+                  orderedDish.price
+                )}</div>
+                <div class="flex items-center justify-center">
+                  <div class="flex gap-4">
+                    <div data-dish-id="${
+                      orderedDish.dishId
+                    }" class="js-decrease bg-slate-300 min-w-[2rem] flex items-center justify-center active:scale-100 hover:scale-105 cursor-pointer px-2 py-1 rounded-sm">-</div>
+                    <div data-dish-id="${
+                      orderedDish.dishId
+                    }" class="js-dish-quantity bg-white flex items-center justify-center min-w-[3rem] border-accent border-dashed border-[2px]">${orderMani.getDishQuantity(
+        orderedDish.dishId
+      )}</div>
+                    <div data-dish-id="${
+                      orderedDish.dishId
+                    }" class="js-increase bg-slate-300 min-w-[2rem] flex items-center justify-center active:scale-100 hover:scale-105 cursor-pointer px-2 py-1 rounded-sm">+</div>
+                  </div>
+                </div>
+                <div data-dish-id="${
+                  orderedDish.dishId
+                }" class="js-subtotal-display flex items-center justify-center">${orderMani.getSubtotal(
+        orderedDish.dishId,
+        orderedDish.price
+      )}</div>
+            </div>
+        `;
+    });
+  } else {
+    orderedDishesHtml = `
+      <div class="col-span-4 flex items-center justify-center min-h-[50vh] text-3xl font-bold font-handWritten text-accent">No item has been added to your orders yet!</div>
     `;
-});
+  }
 
-orderedDishesContainer.innerHTML = orderedDishesHtml;
+  orderedDishesContainer.innerHTML = orderedDishesHtml;
+}
+renderOrders();
 
 renderOrderSummary();
 
@@ -78,7 +88,15 @@ increaseBtns.forEach((increaseBtn) => {
       messages.getAlertBox(`+1 ${dish.dishName}`);
     } else {
       messages.getWarning(
-        "An order of 10 servings and above must have a reservation!"
+        "An order of 10 servings and above must have a reservation!",
+        [
+          {
+            name: "Contact",
+            func() {
+              window.location.href = "./contact.html";
+            },
+          },
+        ]
       );
     }
   });
@@ -100,11 +118,14 @@ function renderOrderSummary() {
   const orderSummaryContainer = document.getElementById("js-order-summary");
   let total = 0;
 
-  // Loop through the dishes to sum the totals based on quantities in orderMani
-  orderedDishes.forEach((orderedDish) => {
-    const dishQuantity = orderMani.getDishQuantity(orderedDish.dishId);
-    total += orderedDish.price * dishQuantity;
-  });
+  if (orderedDishes.length !== 0) {
+    orderedDishes.forEach((orderedDish) => {
+      const dishQuantity = orderMani.getDishQuantity(orderedDish.dishId);
+      total += orderedDish.price * dishQuantity;
+    });
+  } else {
+    total = 0;
+  }
 
   let discount = 0;
   let shippingFee = 0;
@@ -112,26 +133,44 @@ function renderOrderSummary() {
   orderSummaryContainer.innerHTML = `
     <div class="grid grid-cols-3">
       <p class="col-span-2 font-semibold">Total</p>
-      <p>$ ${formatCurrency(total)}</p>
+      <p>$ ${formatCurrency(total || 0)}</p>
     </div>
     <div class="grid grid-cols-3">
       <p class="col-span-2 font-semibold">Discount</p>
-      <p>$ ${formatCurrency(discount)}</p>
+      <p>$ ${formatCurrency(discount || 0)}</p>
     </div>
     <div class="grid grid-cols-3">
       <p class="col-span-2 font-semibold">Shipping</p>
-      <p>$ ${formatCurrency(shippingFee)}</p>
+      <p>$ ${formatCurrency(shippingFee || 0)}</p>
     </div>
     <hr class="mt-3 border-dashed border-dark" />
     <div class="grid grid-cols-3">
       <p class="col-span-2 font-semibold">Grand total</p>
-      <p>$ ${formatCurrency(total + shippingFee - discount)}</p>
+      <p>$ ${formatCurrency(total + shippingFee - discount || 0)}</p>
     </div>
     <hr class="border-dashed border-dark" />
-    <button
+    <button id="js-order-btn"
       class="flex items-center justify-center py-3 rounded-md bg-dark hover:text-dark text-primary hover:bg-accent"
     >
       Order
     </button>
   `;
 }
+
+const orderBtn = document.getElementById("js-order-btn");
+orderBtn.addEventListener("click", () => {
+  if (orderMani.getQuantity() > 0) {
+    messages.getAlertBox("Your order has been sent!");
+    orderMani.clearOrder();
+    renderOrders();
+  } else {
+    messages.getWarning("There is no item in your order list!", [
+      {
+        name: "Go to menu",
+        func() {
+          window.location.href = "./menu.html";
+        },
+      },
+    ]);
+  }
+});

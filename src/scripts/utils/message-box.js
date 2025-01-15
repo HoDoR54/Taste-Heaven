@@ -32,7 +32,7 @@ export class Messages {
     }, 1000);
   }
 
-  getWarning(message) {
+  getWarning(message, buttons = []) {
     const box = document.createElement("div");
     box.classList.add(
       "min-h-[200px]",
@@ -56,21 +56,43 @@ export class Messages {
       "min-w-[500px]",
       "justify-between"
     );
+
     box.innerHTML = `
       <h1 class="flex justify-center items-center text-2xl font-bold">Policy</h1>
-      <div>${message}</div>
-      <div class="flex justify-around mt-5">
+      <div class="text-center">${message}</div>
+      <div class="flex justify-around mt-5" id="js-message-btn-container">
         <button class="bg-dark hover:bg-accent text-primary hover:text-dark px-5 py-2 rounded" id="okayBtn">Okay</button>
-        <a href="./contact.html"><button class="bg-dark hover:bg-accent text-primary hover:text-dark px-5 py-2 rounded">Contact</button></a>
       </div>
     `;
 
     document.body.appendChild(box);
 
-    // Add event listener for 'Okay' button
     const okayBtn = document.getElementById("okayBtn");
     okayBtn.addEventListener("click", () => {
       box.remove();
     });
+
+    const btnContainer = box.querySelector("#js-message-btn-container");
+
+    if (buttons.length > 0) {
+      buttons.forEach((btn) => {
+        const buttonEl = document.createElement("button");
+        buttonEl.classList.add(
+          "bg-dark",
+          "hover:bg-accent",
+          "text-primary",
+          "hover:text-dark",
+          "px-5",
+          "py-2",
+          "rounded"
+        );
+        buttonEl.textContent = btn.name;
+        buttonEl.addEventListener("click", () => {
+          btn.func();
+          box.remove();
+        });
+        btnContainer.appendChild(buttonEl);
+      });
+    }
   }
 }
