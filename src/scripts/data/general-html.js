@@ -48,6 +48,13 @@ export function renderGeneralElements(fileName) {
                   : "./src/html/career.html"
               }">Career</a>
             </li>
+            <li class="cursor-pointer hover:text-accent">
+              <a href="${
+                fileName !== "index"
+                  ? "./contact.html"
+                  : "./src/html/contact.html"
+              }">Contact</a>
+            </li>
           </ul>
         </nav>
         <!-- Buttons -->
@@ -137,8 +144,10 @@ export function renderGeneralElements(fileName) {
           </li>
           <li class="hover:underline hover:text-accent">
             <a href="${
-              fileName === "index" ? "./src/html/order.html" : "./order.html"
-            }">Orders</a>
+              fileName === "index"
+                ? "./src/html/contact.html"
+                : "./contact.html"
+            }">Contact</a>
           </li>
         </ul>
       </div>

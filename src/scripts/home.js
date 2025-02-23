@@ -23,7 +23,7 @@ function generateDishHtml(dish) {
             <div class="flex justify-end mt-auto">
                   <a href="./src/html/dish-details.html">
                     <button
-                        class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-accent hover:text-accent border-dotted border-[2px]"
+                        class="js-dish-view p-2 rounded bg-secondary hover:bg-primary hover:border-accent hover:text-accent border-dark border-dotted border-[2px]"
                         data-dish-id="${dish.dishId}">
                         View
                     </button>

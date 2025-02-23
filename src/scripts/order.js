@@ -39,7 +39,7 @@ function renderOrders() {
                   orderedDish.price
                 )}</div>
                 <div class="flex items-center justify-center">
-                  <div class="flex gap-4">
+                  <div class="flex flex-col sm:flex-row gap-4">
                     <div data-dish-id="${
                       orderedDish.dishId
                     }" class="js-decrease bg-slate-300 min-w-[2rem] flex items-center justify-center active:scale-100 hover:scale-105 cursor-pointer px-2 py-1 rounded-sm">-</div>
@@ -64,7 +64,13 @@ function renderOrders() {
     });
   } else {
     orderedDishesHtml = `
-      <div class="col-span-4 flex items-center justify-center min-h-[50vh] text-3xl font-bold font-handWritten text-accent">No item has been added to your orders yet!</div>
+      <div class="col-span-4 flex flex-col items-center justify-center min-h-[50vh]">
+        <span class="text-3xl font-bold font-handWritten text-center text-accent block">
+          No item has been added to your orders yet!
+        </span>
+        <a href="./menu.html" class="text-accent underline text-xl hover:font-bold">Go to menu</a>
+      </div>
+
     `;
   }
 
